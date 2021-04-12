@@ -717,6 +717,20 @@ nav div {
 
 /* styles work page */
 
+
+.worksMain :first-child{
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.feedworks{
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+  width: 100vh;
+}
+
 .projectsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -730,7 +744,7 @@ nav div {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 
-  width: 900px;
+  width: 80%;
   margin: 20px auto;
 }
 
