@@ -1,0 +1,144 @@
+/* STYLES WORK PAGE */
+
+@mixin buttonWhite ($width){
+    background-color: var(--beige-light);
+    border: 1px solid var(--grey-light);
+    color: var(--grey-light);
+    box-shadow: 3px 7px 15px -7px #6e6e6e;
+    width: $width; 
+    height: 3rem;
+}  
+
+@mixin textbutton ($fontsize) {
+    text-decoration: none;
+    color: var(--grey-light);
+    font-family: var(--font-Archivo);
+    font-size: $fontsize;
+    letter-spacing: -1px;
+}
+
+%titlePurple{
+  font-size: 6rem;
+  text-align: right;
+  color: var(--purple-rocks);
+  line-height: 5rem;
+}
+
+.worksMain__title{
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  align-items: center; 
+  width: 100% - 20;
+  margin: 20px auto;
+    button{
+      @include buttonWhite(30rem); 
+        a{
+        @include textbutton(2rem)
+        }
+    } 
+    h1{
+      @extend %titlePurple;
+    }
+    
+}
+
+.feedworks{
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+  width: 100vh;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 900px 250px 250px 250px;
+  grid-template-areas:
+    "outstanding outstanding outstanding"
+    "secondary tertiary tertiary"
+    "panoramic panoramic panoramic"
+    "simple1 simple2 simple3";
+
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+
+  width: 100% - 20;
+  margin: 20px auto;
+}
+
+.principalProject {
+  grid-area: outstanding;
+  background-color: var(--beige-light);
+  border: 2px solid var(--grey-hard);
+  box-shadow: 3px 7px 15px -7px #6e6e6e;
+  background-image: url(/images/works1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.secondProject {
+  grid-area: secondary;
+  background-color: var(--beige-light);
+  border: 2px solid var(--grey-hard);
+  box-shadow: 3px 7px 15px -7px #6e6e6e;
+  background-image: url(/images/works2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thirdProject {
+  grid-area: tertiary;
+  background-color: var(--beige-light);
+  border: 2px solid var(--grey-hard);
+  box-shadow: 3px 7px 15px -7px #6e6e6e;
+  background-image: url(/images/works3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.horizontalProject {
+  grid-area: panoramic;
+  background-color: var(--beige-light);
+  border: 2px solid var(--grey-hard);
+  box-shadow: 3px 7px 15px -7px #6e6e6e;
+  background-image: url(/images/works4.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.finalProject1 {
+  grid-area: simple1;
+  background-color: var(--beige-light);
+  border: 2px solid var(--grey-hard);
+  box-shadow: 3px 7px 15px -7px #6e6e6e;
+  background-image: url(/images/works5.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.finalProject2 {
+  grid-area: simple2;
+  background-color: var(--beige-light);
+  border: 2px solid var(--grey-hard);
+  box-shadow: 3px 7px 15px -7px #6e6e6e;
+  background-image: url(/images/works6.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.finalProject3 {
+  grid-area: simple3;
+  background-color: var(--beige-light);
+  border: 2px solid var(--grey-hard);
+  box-shadow: 3px 7px 15px -7px #6e6e6e;
+  background-image: url(/images/works7.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
