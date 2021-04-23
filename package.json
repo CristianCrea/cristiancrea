@@ -1,0 +1,25 @@
+{
+  "name": "cristiancrea",
+  "version": "1.0.0",
+  "description": "<!-- **CristianCrea/cristiancrea** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/style.scss css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristianCrea/cristiancrea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristianCrea/cristiancrea/issues"
+  },
+  "homepage": "https://github.com/CristianCrea/cristiancrea#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
