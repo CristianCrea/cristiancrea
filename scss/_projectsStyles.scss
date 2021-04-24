@@ -1,0 +1,29 @@
+/*STYLES PROJECTS PAGES*/
+
+.projectsMain__title{
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  align-items: center; 
+  width: 100% - 20;
+  margin: 20px auto;
+    button{
+      @include buttonWhite(30rem); 
+        a{
+        @include textbutton(2rem)
+        }
+    } 
+    h1{
+      @extend %titlePurple;
+    }
+    
+}
+
+.imageContainer{
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+    img{
+      width: 100%;
+    }
+}

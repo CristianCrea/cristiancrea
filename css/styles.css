@@ -716,7 +716,7 @@ footer p {
   font-size: 1.3rem; }
 
 /* STYLES WORK PAGE */
-.worksMain__title h1 {
+.worksMain__title h1, .projectsMain__title h1 {
   font-size: 6rem;
   text-align: right;
   color: var(--purple-rocks);
@@ -751,81 +751,137 @@ footer p {
 .projectsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 900px 250px 250px 250px;
+  grid-template-rows: 750px 250px 250px 250px;
   grid-template-areas: "outstanding outstanding outstanding" "secondary tertiary tertiary" "panoramic panoramic panoramic" "simple1 simple2 simple3";
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   width: 80%;
   margin: 20px auto; }
 
-.principalProject {
+.vivaProject {
   grid-area: outstanding;
   background-color: var(--beige-light);
   border: 2px solid var(--grey-hard);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  background-image: url(/images/works1.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  padding: 2rem; }
+  .vivaProject div {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/project-viva.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
-.secondProject {
+.duffelProject {
   grid-area: secondary;
   background-color: var(--beige-light);
   border: 2px solid var(--grey-hard);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  background-image: url(/images/works2.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  padding: 2rem; }
+  .duffelProject div {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/project-duffel.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
-.thirdProject {
+.omProject {
   grid-area: tertiary;
   background-color: var(--beige-light);
   border: 2px solid var(--grey-hard);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  background-image: url(/images/works3.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  padding: 2rem; }
+  .omProject div {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/project-om.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
-.horizontalProject {
+.dkaryProject {
   grid-area: panoramic;
   background-color: var(--beige-light);
   border: 2px solid var(--grey-hard);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  background-image: url(/images/works4.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  padding: 2rem; }
+  .dkaryProject div {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/project-dkary.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
-.finalProject1 {
+.ttrackProject {
   grid-area: simple1;
   background-color: var(--beige-light);
   border: 2px solid var(--grey-hard);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  background-image: url(/images/works5.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  padding: 2rem; }
+  .ttrackProject div {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/project-ttrack.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
-.finalProject2 {
+.limpiProject {
   grid-area: simple2;
   background-color: var(--beige-light);
   border: 2px solid var(--grey-hard);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  background-image: url(/images/works6.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  padding: 2rem; }
+  .limpiProject div {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/project-limpi.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
-.finalProject3 {
+.printsProject {
   grid-area: simple3;
   background-color: var(--beige-light);
   border: 2px solid var(--grey-hard);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  background-image: url(/images/works7.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  padding: 2rem; }
+  .printsProject div {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/project-prints.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
 /*STYLES DIDACUS PAGE*/
+/*STYLES PROJECTS PAGES*/
+.projectsMain__title {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto; }
+  .projectsMain__title button {
+    background-color: var(--beige-light);
+    border: 1px solid var(--grey-light);
+    color: var(--grey-light);
+    box-shadow: 3px 7px 15px -7px #6e6e6e;
+    width: 30rem;
+    height: 3rem; }
+    .projectsMain__title button a {
+      text-decoration: none;
+      color: var(--grey-light);
+      font-family: var(--font-Archivo);
+      font-size: 2rem;
+      letter-spacing: -1px; }
+
+.imageContainer {
+  width: 80%;
+  height: auto;
+  margin: 0 auto; }
+  .imageContainer img {
+    width: 100%; }
