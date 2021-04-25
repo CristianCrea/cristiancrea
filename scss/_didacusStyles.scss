@@ -1,1 +1,87 @@
 /*STYLES DIDACUS PAGE*/
+@mixin price ($size){
+  font-family: var(--font-Archivo);
+  font-size: $size;
+  color: var(--grey-light);
+}
+
+@mixin product ($image){
+  width: 60%;
+      height: auto;
+      background-image:$image;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+/* CONTAINER STYLES*/
+
+.artContainer{
+  display: flex;
+  width: 80%;
+  margin: 4rem auto;
+    .artContainer_text{
+      width: 40%;
+      height: auto;
+      margin: 2rem;
+        div{
+          background-color: var(--yellow-high);
+          margin-bottom: 2rem;
+          width: 30rem;
+          padding: 1rem;
+            h2{
+              font-size: 3rem;
+              color: var(--grey-light);
+            }
+            h3{
+              font-size: 2rem;
+              font-weight: var(--size100);
+            }
+        }
+        p{
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+        .artContainer__price{
+          display: flex;
+          background-color: var(--beige-light);
+          width: 100%;
+          height: auto;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .price{
+          @include price(3rem);
+        }
+        button{
+          @include buttonWhite(15rem); 
+            a{
+              @include textbutton(2rem)
+            }
+        }
+    }
+    .artContainer_cardumen{
+      width: 60%;
+      height: auto;
+      background-image: url("../images/art-cardumen.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .artContainer_monkey{
+      @include product(url("../images/art-monkey.jpg"));
+    }
+    .artContainer_budda{
+      @include product(url("../images/art-budda.jpg"));
+    }
+}
+
+
+

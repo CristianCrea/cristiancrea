@@ -10,7 +10,7 @@
     button{
       @include buttonWhite(30rem); 
         a{
-        @include textbutton(2rem)
+        @include textbutton(2rem);
         }
     } 
     h1{
@@ -25,5 +25,19 @@
   margin: 0 auto;
     img{
       width: 100%;
+    }
+}
+
+.returnButton{
+  width: 80%;
+  height: auto;
+  display: flex;
+  margin: 2rem auto;
+  justify-content: center;
+    button{
+      @include buttonWhite(10rem); 
+        a{
+          @include textbutton(2rem);
+        }
     }
 }

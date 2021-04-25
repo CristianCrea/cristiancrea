@@ -26,11 +26,10 @@
 
 .worksMain__title{
   display: flex;
-  margin-top: 3rem;
   justify-content: space-between;
   align-items: center; 
   width: 100% - 20;
-  margin: 20px auto;
+  margin: 2rem auto;
     button{
       @include buttonWhite(30rem); 
         a{
@@ -183,4 +182,39 @@
       background-repeat: no-repeat;
       
     }
+}
+
+@media screen and (max-width: 768px){
+  .projectsGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 250px 250px 250px 250px 250px 250px;
+    grid-template-areas:
+    "outstanding"
+    "secondary"
+    "tertiary"
+    "panoramic"
+    "simple1"
+    "simple2"
+    "simple3";
+
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+
+  width: 80%;
+  margin: 0 auto;
+  }
+  
+  .worksMain__title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+      h1{
+        text-align: left;
+        margin: 2rem 0;
+        font-size: 4rem;
+        line-height: 3.5rem;
+      }
+  }
 }

@@ -61,24 +61,6 @@ nav div {
   position: fixed;
 }
 
-.languageContainer button {
-  width: 70px;
-  height: 30px;
-  margin: 3px;
-  background-color: var(--beige-light);
-  border: 2px solid var(--grey-light);
-}
-
-.languageContainer button:hover {
-  background-color: var(--purple-rocks);
-  border: none;
-}
-
-.languageContainer button a {
-  text-decoration: none;
-  color: var(--grey-light);
-}
-
 .languageContainer button a:hover {
   color: var(--beige-light);
 }
