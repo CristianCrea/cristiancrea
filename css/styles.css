@@ -417,8 +417,8 @@ nav div {
     justify-content: center;
     align-items: center; }
   .contentContainer .photoContainer img {
-    width: 45rem;
-    height: 45rem; }
+    width: 40rem;
+    height: 40rem; }
 
 /* text styles  */
 .bioContainer {
@@ -428,7 +428,7 @@ nav div {
   justify-content: center; }
 
 .bioContainer__name h1 {
-  font-size: 7rem;
+  font-size: 4rem;
   font-weight: 100;
   color: var(--grey-light);
   animation-name: opacity;
@@ -436,11 +436,11 @@ nav div {
   animation-timing-function: ease-in-out; }
 
 .bioContainer__name p {
-  font-size: 15rem;
+  font-size: 9rem;
   font-family: var(--font-Archivo);
   color: var(--grey-light);
-  margin-top: -3rem;
-  letter-spacing: -1rem;
+  margin-top: -1rem;
+  letter-spacing: -0.5rem;
   animation-name: opacity;
   animation-duration: 2s;
   animation-timing-function: ease-in-out; }
@@ -452,11 +452,10 @@ nav div {
     opacity: 100; } }
 
 .bioContainer__firstProfession :first-child {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: var(--font-Archivo);
   color: var(--grey-light);
-  letter-spacing: -0.1rem;
-  margin-left: 4rem; }
+  letter-spacing: -0.1rem; }
 
 .bioContainer__firstProfession :nth-child(2) {
   font-size: 4rem;
@@ -486,15 +485,17 @@ nav div {
 
 .bioContainer__secondProfession {
   display: flex;
+  width: 100%;
+  height: auto;
   flex-direction: column;
-  align-items: flex-end;
-  padding-right: 10rem; }
+  align-items: center; }
 
 .bioContainer__secondProfession :first-child {
   font-size: 3rem;
   font-family: var(--font-Archivo);
   color: var(--grey-light);
-  letter-spacing: -0.1rem; }
+  letter-spacing: -0.1rem;
+  text-align: right; }
 
 .bioContainer__secondProfession :nth-child(2) {
   font-size: 3rem;
@@ -503,8 +504,8 @@ nav div {
   letter-spacing: -0.1rem; }
 
 .bioContainer__skills p {
-  margin: 20px 0 0 45px;
-  font-size: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
   color: var(--grey-light);
   font-weight: 300; }
 
@@ -524,23 +525,26 @@ nav div {
 /* styles about section*/
 .aboutContainer {
   width: 100%;
-  min-width: 320px;
   height: auto;
-  padding-left: 10rem;
-  background-color: var(--blue-hard);
-  background-image: url("./images/background-about-container.jpg");
-  /* background-image: url("./images/background-about-container.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; */ }
-
-.aboutContainer .aboutContainer__identifier {
-  width: 75px;
-  height: 30px;
-  background-color: var(--yellow-high);
-  color: var(--grey-light);
-  padding: 5px;
-  margin: 0 0 30px 70px; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--yellow-high); }
+  .aboutContainer .aboutContainer__content {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .aboutContainer .aboutContainer__content .aboutContainer__identifier {
+      width: 75px;
+      height: 30px;
+      background-color: var(--purple-rocks);
+      color: var(--beige-light);
+      padding: 5px;
+      margin: 1rem 0;
+      align-self: flex-start; }
 
 .aboutContainer p {
   width: 30%;
@@ -557,13 +561,13 @@ nav div {
 .aboutContainer__bio div {
   width: 10%;
   height: 10px;
-  background-color: var(--yellow-high);
-  color: var(--yellow-high);
+  background-color: var(--purple-rocks);
+  color: var(--purple-rocks);
   margin-bottom: 2rem; }
 
 .aboutContainer__bio p {
   font-size: 1.5rem;
-  color: var(--beige-light);
+  color: var(--grey-hard);
   width: 50rem;
   text-align: justify; }
 
@@ -574,7 +578,7 @@ nav div {
   align-items: flex-end; }
 
 .aboutContainer__intention div {
-  background-color: #00092e;
+  background-color: var(--purple-rocks);
   padding: 3rem;
   width: 60rem;
   margin-right: 2rem; }
@@ -586,18 +590,17 @@ nav div {
   text-align: justify; }
 
 .aboutContainer__intention button {
-  background-color: var(--yellow-high);
+  background-color: var(--purple-rocks);
   border: none;
   width: auto;
-  height: 40px;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  padding: 0 15px; }
+  padding: 1.5rem; }
 
 .aboutContainer__intention button a {
   text-decoration: none;
   font-family: var(--font-Archivo);
-  font-size: 2rem;
-  color: var(--grey-hard); }
+  font-size: 1.5rem;
+  color: var(--beige-light); }
 
 .aboutContainer__trajectory {
   width: 100%;
@@ -614,23 +617,23 @@ nav div {
 .aboutContainer__trajectoryCard div {
   width: 3rem;
   height: 3rem;
-  box-shadow: 4px 4px 0px 1px #ffffff;
-  color: var(--yellow-high);
-  background-color: var(--yellow-high);
+  box-shadow: 4px 4px 0px 1px var(--grey-hard);
+  color: var(--purple-rocks);
+  background-color: var(--purple-rocks);
   margin-bottom: 1rem; }
 
 .aboutContainer__trajectoryCard :nth-child(2) {
-  color: var(--beige-light);
+  color: var(--grey-light);
   width: 100%; }
 
 .aboutContainer__trajectoryCard :nth-child(3) {
-  color: var(--beige-light);
+  color: var(--grey-light);
   width: 100%;
   font-family: var(--font-Archivo);
-  font-size: 4rem; }
+  font-size: 3rem; }
 
 .aboutContainer__trajectoryCard :nth-child(4) {
-  color: var(--yellow-high);
+  color: var(--purple-rocks);
   width: 100%;
   font-family: var(--font-Archivo);
   font-size: 2rem; }
