@@ -401,15 +401,23 @@ nav div {
   height: 600px; }
 
 .contentContainer {
-  display: flex; }
+  display: flex;
+  width: 80%;
+  height: auto;
+  margin: 0 auto; }
+
+.photoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .photoContainer img {
-  width: 500px;
-  margin: 40px 150px 0 0; }
+  width: 50rem;
+  height: 50rem; }
 
 /* text styles  */
 .bioContainer {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   padding: 100px 0 0 100px; }
