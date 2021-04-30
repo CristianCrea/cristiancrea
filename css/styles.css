@@ -835,16 +835,18 @@ nav div {
 .shopContainer__productContent {
   display: flex;
   margin-bottom: 2rem;
+  min-width: 35rem;
+  max-width: 45rem;
   box-shadow: 0px 10px 13px -7px #000000, 0px 6px 17px -5px rgba(0, 0, 0, 0);
   background-color: var(--yellow-high); }
 
 .productContent__image {
-  width: 20rem;
-  height: 20rem;
-  margin-right: 1rem; }
+  width: 18rem;
+  height: 18rem;
+  margin-right: 2rem; }
 
 .productContent__image img {
-  width: 20rem; }
+  width: 18rem; }
 
 .productContent__superiortext {
   display: flex;
