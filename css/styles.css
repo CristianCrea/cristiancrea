@@ -839,12 +839,12 @@ nav div {
   background-color: var(--yellow-high); }
 
 .productContent__image {
-  width: 25rem;
-  height: 25rem;
+  width: 20rem;
+  height: 20rem;
   margin-right: 1rem; }
 
 .productContent__image img {
-  width: 25rem; }
+  width: 20rem; }
 
 .productContent__superiortext {
   display: flex;
