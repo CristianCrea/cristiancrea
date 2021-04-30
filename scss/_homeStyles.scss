@@ -69,7 +69,11 @@ nav div {
 
 .introContainer {
   width: 100%;
-  height: 600px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
 }
 
 .contentContainer {
@@ -77,17 +81,18 @@ nav div {
   width: 80%;
   height: auto;
   margin: 0 auto;
-}
-
-.photoContainer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.photoContainer img {
-  width: 50rem;
-  height: 50rem;
+    /*Styles photo bio*/
+    .photoContainer{
+      display: flex;
+      width: 50%;
+      height: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    .photoContainer img {
+      width: 45rem;
+      height: 45rem;
+    }
 }
 
 /* text styles  */
@@ -96,7 +101,7 @@ nav div {
   width: 50%;
   display: flex;
   flex-direction: column;
-  padding: 100px 0 0 100px;
+  justify-content: center;
 }
 
 .bioContainer__name h1 {
@@ -199,6 +204,7 @@ nav div {
 .bioContainer__skills span {
   color: var(--purple-rocks);
 }
+
 /* styles menu  */
 
 .menuContainer {
