@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*VARIABLES*/
 :root {
   --beige-light: #f2eadf;
@@ -390,7 +391,7 @@ nav div {
   margin-bottom: 5rem; }
 
 .logoContainer img {
-  width: 70px;
+  width: 7rem;
   position: fixed; }
 
 .languageContainer button a:hover {
@@ -671,6 +672,12 @@ nav div {
   align-items: center;
   margin-top: 4rem; }
 
+.projectContainer__viva {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem; }
+
 .projectContainer__image img {
   width: 30rem;
   margin: 0px 30px 0px 0px; }
@@ -777,7 +784,7 @@ nav div {
   border: none;
   color: var(-grey-hard);
   width: 100%;
-  height: 40px;
+  height: auto;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
   margin-left: 5px; }
 
@@ -837,7 +844,7 @@ nav div {
 .shopContainer__productContent {
   display: flex;
   margin-bottom: 2rem;
-  min-width: 35rem;
+  min-width: 30rem;
   max-width: 45rem;
   box-shadow: 0px 10px 13px -7px #000000, 0px 6px 17px -5px rgba(0, 0, 0, 0);
   background-color: var(--yellow-high); }
@@ -956,7 +963,11 @@ nav div {
   width: 100%;
   height: auto;
   background-color: var(--yellow-high);
-  padding: 10px; }
+  display: flex;
+  justify-content: center; }
+  .contactContainer .contactContainer__content {
+    width: 80%;
+    height: auto; }
 
 .contactContainer .contactContainer__identifier {
   width: 100px;
@@ -964,11 +975,8 @@ nav div {
   background-color: var(--purple-rocks);
   color: var(--beige-light);
   padding: 5px;
-  margin: 0 0 30px 70px;
+  margin: 1rem 0 3rem;
   font-size: 2rem; }
-
-.contactContainer__cta {
-  padding-left: 10rem; }
 
 .contactContainer__cta h6 {
   font-family: var(--font-Monserrat);
@@ -987,9 +995,8 @@ nav div {
   width: 100%;
   height: 6rem;
   display: flex;
-  padding-left: 8rem;
   align-items: center;
-  margin: 20px; }
+  margin: 2rem 0 2rem; }
 
 .contactContainer__mail div {
   width: 5rem;
@@ -1006,7 +1013,6 @@ nav div {
 
 .followContainer {
   display: flex;
-  padding-left: 10rem;
   width: 100%;
   height: 5rem;
   display: flex;
@@ -1029,8 +1035,7 @@ nav div {
   height: 60px; }
 
 .contactContainer__download {
-  margin-top: 3rem;
-  padding-left: 10rem; }
+  margin-top: 3rem; }
 
 .contactContainer__download button {
   background-color: var(--grey-light);
@@ -1060,7 +1065,7 @@ footer {
 footer p {
   font-size: 1.3rem; }
 
-/*MEDIA QUERIES HOME*/
+/*MEDIA QUERIES HOME TABLET*/
 @media screen and (max-width: 768px) {
   /*TABLET 768PX INTRO SECTION*/
   .contentContainer {
@@ -1112,6 +1117,8 @@ footer p {
   .shopContainer__shopButton a {
     font-size: 1.8rem; }
   /*TABLET 768PX CONTACT SECTION*/
+  .contactContainer .contactContainer__content {
+    width: 75%; }
   .contactContainer__cta h6 {
     font-size: 4rem; }
   .contactContainer__cta p {
@@ -1120,4 +1127,60 @@ footer p {
   .contactContainer__mail p {
     font-size: 4.5rem; }
   .followContainer p {
-    font-size: 3rem; } }
+    font-size: 3rem; }
+  /*TABLET 768PX MENÚ*/
+  .menuContainer {
+    display: none; } }
+
+/*MEDIA QUERIES HOME MOBILE*/
+@media screen and (max-width: 700px) {
+  /*MOBILE 699PX HEADER AND INTRO SECTION*/
+  .topSection {
+    margin-bottom: 0; }
+  .logoContainer img {
+    width: 5rem;
+    position: relative; }
+  .introContainer {
+    margin: 0 0 2rem 0; }
+  .contentContainer {
+    flex-direction: column-reverse;
+    align-items: center; }
+  .contentContainer .bioContainer {
+    width: 100%;
+    align-items: center; }
+  /*MOBILE 699PX ABOUT SECTION*/
+  .aboutContainer__bio p {
+    width: 100%; }
+  .aboutContainer__intention {
+    flex-direction: column;
+    align-items: flex-start; }
+  .aboutContainer__intention div {
+    width: 100%;
+    margin: 0 0 2rem 0; }
+  .aboutContainer__trajectory {
+    flex-direction: column; }
+  .aboutContainer__trajectoryCard :nth-child(2) {
+    font-size: 2.5rem; }
+  /*MOBILE 699PX WORKS SECTION*/
+  .projectContainer {
+    flex-direction: column; }
+  .projectContainer__image img {
+    margin: 0px 0px 1rem 0; }
+  .projectContainer__viva {
+    flex-direction: column-reverse; }
+  .projectContainer__text--justifyRight {
+    align-items: flex-start; }
+  .projectContainer__image--marginLeft img {
+    margin: 0px 0px 1rem 0; }
+  .projectContainer__square {
+    display: none; }
+  .projectContainer__worksButton {
+    margin-left: 0;
+    width: 80%;
+    padding: 1rem; }
+  /*MOBILE 699PX SHOP SECTION*/
+  .productContent__image {
+    width: 10rem;
+    height: 10rem; }
+  .productContent__image img {
+    width: 10rem; } }
