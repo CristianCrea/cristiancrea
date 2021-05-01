@@ -385,6 +385,7 @@ nav div {
 .projectContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 4rem;
 }
 
@@ -417,7 +418,7 @@ nav div {
 .projectContainer__text :nth-child(3) {
   font-size: 1.5rem;
   color: var(--grey-hard);
-  width: 500px;
+  width: 100%;
   margin: 10px 0 15px;
   text-align: justify;
 }
@@ -480,7 +481,7 @@ nav div {
 .projectContainer__text--justifyRight :nth-child(3) {
   font-size: 1.5rem;
   color: var(--grey-hard);
-  width: 500px;
+  width: 100%;
   margin: 10px 0 15px;
   text-align: justify;
 }
@@ -511,7 +512,7 @@ nav div {
   background-color: var(--yellow-high);
   border: none;
   color: var(-grey-hard);
-  width: 550px;
+  width: 100%;
   height: 40px;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
   margin-left: 5px;
@@ -847,3 +848,90 @@ footer p {
   font-size: 1.3rem;
 }
 
+/*MEDIA QUERIES HOME*/
+
+@media screen and (max-width: 768px){
+    /*TABLET 768PX INTRO SECTION*/
+    .contentContainer{
+      width: 75%; 
+    }
+    .bioContainer__name P {
+      font-size: 6rem;
+    }
+    .contentContainer .photoContainer img{
+      width: 32rem;
+      height: 32rem;
+    }
+    /*TABLET 768PX ABOUT SECTION*/
+    .aboutContainer .aboutContainer__content{
+      width: 75%;
+    }
+    .aboutContainer__bio p{
+      width: 55rem;
+    }
+    .aboutContainer__trajectory{
+      padding: 3rem 0;
+    }
+    .aboutContainer__trajectoryCard :nth-child(4){
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    /*TABLET 768PX WORKS SECTION*/
+    .worksContainer .worksContainer__content{
+      width: 75%;
+    }
+    .projectContainer__text :nth-child(2){
+      font-size: 2.5rem;
+      margin-top: -4px;
+    }
+    .projectContainer__text--justifyRight :nth-child(2){
+      font-size: 2.5rem;
+      margin-top: -4px;
+    }
+    .projectContainer__worksButton a {
+      font-size: 1.5rem;
+    }
+    /*TABLET 768PX SHOP SECTION*/
+    .shopContainer__content{
+      width: 75%;
+    }
+    .shopContainer__title h5{
+      text-align: left;
+    }
+    .shopContainer__title p{
+      text-align: left;
+    }
+    .shopContainer__products1{
+      flex-direction: column;
+    }
+    .shopContainer__productCard{
+      width: 100%;
+    }
+    .shopContainer__productContent{
+      max-width: 55rem;
+    }
+    .productContent__image{
+      width: 35rem;
+      height: 35rem;
+    }
+    .productContent__image img{
+      width: 35rem;
+    }
+    .shopContainer__shopButton a{
+      font-size: 1.8rem;
+    }
+    /*TABLET 768PX CONTACT SECTION*/
+    .contactContainer__cta h6{
+      font-size: 4rem;
+    }
+    .contactContainer__cta p{
+      font-size: 10rem; 
+      margin-top: -1rem;
+    }
+    .contactContainer__mail p{
+      font-size: 4.5rem;
+    }
+    .followContainer p{
+      font-size: 3rem;
+    }
+}
