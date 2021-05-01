@@ -1014,7 +1014,7 @@ nav div {
 .followContainer {
   display: flex;
   width: 100%;
-  height: 5rem;
+  height: auto;
   display: flex;
   align-items: center;
   margin-top: 5rem; }
@@ -1041,7 +1041,7 @@ nav div {
   background-color: var(--grey-light);
   border: none;
   width: auto;
-  height: 40px;
+  height: 4rem;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
   padding: 0 15px;
   margin-bottom: 3rem; }
@@ -1179,8 +1179,20 @@ footer p {
     width: 80%;
     padding: 1rem; }
   /*MOBILE 699PX SHOP SECTION*/
-  .productContent__image {
-    width: 10rem;
-    height: 10rem; }
-  .productContent__image img {
-    width: 10rem; } }
+  /*MOBILE 699PX CONTACT SECTION*/
+  .contactContainer__cta h6 {
+    font-size: 2rem; }
+  .contactContainer__cta p {
+    font-size: 7rem; }
+  .contactContainer__mail div {
+    width: 3rem;
+    height: 3rem; }
+  .contactContainer__mail p {
+    font-size: 3rem;
+    margin: 1rem 0 2rem; }
+  .followContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem; }
+  .contactContainer__download {
+    margin-top: 1rem; } }
