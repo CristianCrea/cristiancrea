@@ -173,7 +173,7 @@
     .worksMain__title h1 {
       text-align: left;
       margin: 2rem 0;
-      font-size: 4rem;
+      font-size: 3.5rem;
       line-height: 3.5rem; } }
 
 /*STYLES DIDACUS PAGE*/
@@ -187,18 +187,21 @@ main {
 .artContainer {
   display: flex;
   width: 80%;
-  margin: 4rem auto; }
+  margin: 4rem auto;
+  justify-content: center; }
   .artContainer .artContainer_text {
-    width: 40%;
+    width: 20rem;
     height: auto;
-    margin: 2rem; }
+    margin: 2rem;
+    display: flex;
+    flex-direction: column; }
     .artContainer .artContainer_text div {
       background-color: var(--yellow-high);
       margin-bottom: 2rem;
-      width: 30rem;
+      width: auto;
       padding: 1rem; }
       .artContainer .artContainer_text div h2 {
-        font-size: 3rem;
+        font-size: 2rem;
         color: var(--grey-light); }
       .artContainer .artContainer_text div h3 {
         font-size: 2rem;
@@ -208,14 +211,15 @@ main {
       margin-bottom: 2rem; }
     .artContainer .artContainer_text .artContainer__price {
       display: flex;
+      flex-direction: column;
       background-color: var(--beige-light);
       width: 100%;
       height: auto;
       justify-content: space-between;
-      align-items: center; }
+      align-items: flex-start; }
     .artContainer .artContainer_text .price {
       font-family: var(--font-Archivo);
-      font-size: 3rem;
+      font-size: 2rem;
       color: var(--grey-light); }
     .artContainer .artContainer_text button {
       background-color: var(--beige-light);
@@ -230,27 +234,47 @@ main {
         font-family: var(--font-Archivo);
         font-size: 2rem;
         letter-spacing: -1px; }
-  .artContainer .artContainer_cardumen {
-    width: 60%;
+  .artContainer .artContainer__photo {
+    width: 50rem;
     height: auto;
-    background-image: url("../images/art-cardumen.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; }
-  .artContainer .artContainer_monkey {
-    width: 60%;
-    height: auto;
-    background-image: url("../images/art-monkey.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; }
-  .artContainer .artContainer_budda {
-    width: 60%;
-    height: auto;
-    background-image: url("../images/art-budda.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; }
+    display: flex;
+    justify-content: center;
+    align-content: center; }
+    .artContainer .artContainer__photo img {
+      width: 50rem;
+      height: 33.3rem;
+      align-self: center; }
+
+/*MEDIA QUERIES DIDACUS ART TABLET*/
+@media screen and (max-width: 768px) {
+  .artContainer {
+    width: 70%;
+    flex-direction: column-reverse;
+    margin: 1rem auto; }
+  .artContainer .artContainer_text {
+    width: 100%;
+    margin-left: 0; }
+    .artContainer .artContainer_text div {
+      width: 20rem; }
+  .artContainer__price {
+    padding: 0rem; }
+  /*TABLET 768PX TITTLE-DIDACUS*/
+  .worksMain__title {
+    width: 70%; }
+    .worksMain__title button {
+      width: auto;
+      height: auto;
+      padding: 1rem; } }
+
+/*MEDIA QUERIES DIDACUS ART MOBILE*/
+@media screen and (max-width: 500px) {
+  .artContainer {
+    width: 85%; }
+    .artContainer .artContainer__photo {
+      width: 28rem; }
+      .artContainer .artContainer__photo img {
+        width: 28rem;
+        height: 18.6rem; } }
 
 /*STYLES PROJECTS PAGES*/
 .projectsMain__title {
@@ -258,7 +282,7 @@ main {
   margin-top: 3rem;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 70%;
   margin: 20px auto; }
   .projectsMain__title button {
     background-color: var(--beige-light);
@@ -275,7 +299,7 @@ main {
       letter-spacing: -1px; }
 
 .imageContainer {
-  width: 80%;
+  width: 70%;
   height: auto;
   margin: 0 auto; }
   .imageContainer img {
@@ -300,6 +324,20 @@ main {
       font-family: var(--font-Archivo);
       font-size: 2rem;
       letter-spacing: -1px; }
+
+/*MEDIA QUERIES PROJECTS MOBILE 425PX */
+@media screen and (max-width: 426px) {
+  .projectsMain__title {
+    flex-direction: column; }
+    .projectsMain__title button {
+      margin-bottom: 2rem;
+      width: auto;
+      height: auto;
+      padding: 1rem; }
+    .projectsMain__title h1 {
+      font-size: 3rem;
+      line-height: 2.8rem;
+      text-align: left; } }
 
 .talkSection {
   width: 100vw;

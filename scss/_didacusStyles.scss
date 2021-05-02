@@ -27,17 +27,20 @@ main{
   display: flex;
   width: 80%;
   margin: 4rem auto;
+  justify-content: center;
     .artContainer_text{
-      width: 40%;
+      width: 20rem;
       height: auto;
       margin: 2rem;
+      display: flex;
+      flex-direction: column;
         div{
           background-color: var(--yellow-high);
           margin-bottom: 2rem;
-          width: 30rem;
+          width: auto;
           padding: 1rem;
             h2{
-              font-size: 3rem;
+              font-size: 2rem;
               color: var(--grey-light);
             }
             h3{
@@ -51,14 +54,15 @@ main{
         }
         .artContainer__price{
           display: flex;
+          flex-direction: column;
           background-color: var(--beige-light);
           width: 100%;
           height: auto;
           justify-content: space-between;
-          align-items: center;
+          align-items: flex-start;
         }
         .price{
-          @include price(3rem);
+          @include price(2rem);
         }
         button{
           @include buttonWhite(15rem); 
@@ -67,21 +71,60 @@ main{
             }
         }
     }
-    .artContainer_cardumen{
-      width: 60%;
+    .artContainer__photo{
+      width: 50rem;
       height: auto;
-      background-image: url("../images/art-cardumen.jpg");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .artContainer_monkey{
-      @include product(url("../images/art-monkey.jpg"));
-    }
-    .artContainer_budda{
-      @include product(url("../images/art-budda.jpg"));
+      display: flex;
+      justify-content: center;
+      align-content: center;
+        img{
+          width: 50rem;
+          height: 33.3rem;
+          align-self: center;
+        }
     }
 }
 
+/*MEDIA QUERIES DIDACUS ART TABLET*/
+@media screen and (max-width: 768px){
+  .artContainer{
+    width: 70%;
+    flex-direction: column-reverse;
+    margin: 1rem auto;
+  }
+  .artContainer .artContainer_text{
+    width: 100%;
+    margin-left: 0;
+      div{
+        width: 20rem;
+      }
+  }
+  .artContainer__price{
+    padding: 0rem;
+  }
+  /*TABLET 768PX TITTLE-DIDACUS*/
+  .worksMain__title{
+    width: 70%;
+      button{
+        width: auto;
+        height: auto;
+        padding: 1rem;
+      }
+  }
+}
 
-
+/*MEDIA QUERIES DIDACUS ART MOBILE*/
+@media screen and (max-width: 500px){
+  
+  
+  .artContainer{
+    width: 85%;
+      .artContainer__photo{
+        width: 28rem;
+          img{
+            width: 28rem;
+            height: 18.6rem;
+          }
+  }
+  }
+}
