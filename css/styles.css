@@ -198,17 +198,18 @@ main {
     .artContainer .artContainer_text div {
       background-color: var(--yellow-high);
       margin-bottom: 2rem;
-      width: auto;
-      padding: 1rem; }
+      width: auto; }
       .artContainer .artContainer_text div h2 {
         font-size: 2rem;
-        color: var(--grey-light); }
+        color: var(--grey-light);
+        margin: 0.8rem; }
       .artContainer .artContainer_text div h3 {
         font-size: 2rem;
-        font-weight: var(--size100); }
+        font-weight: var(--size100);
+        margin: 0.8rem; }
     .artContainer .artContainer_text p {
       font-size: 1.5rem;
-      margin-bottom: 2rem; }
+      margin-bottom: 1rem; }
     .artContainer .artContainer_text .artContainer__price {
       display: flex;
       flex-direction: column;
@@ -220,7 +221,8 @@ main {
     .artContainer .artContainer_text .price {
       font-family: var(--font-Archivo);
       font-size: 2rem;
-      color: var(--grey-light); }
+      color: var(--grey-light);
+      margin-bottom: 0.8rem; }
     .artContainer .artContainer_text button {
       background-color: var(--beige-light);
       border: 1px solid var(--grey-light);

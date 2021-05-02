@@ -3,6 +3,7 @@
   font-family: var(--font-Archivo);
   font-size: $size;
   color: var(--grey-light);
+  margin-bottom: 0.8rem;
 }
 
 @mixin product ($image){
@@ -38,19 +39,20 @@ main{
           background-color: var(--yellow-high);
           margin-bottom: 2rem;
           width: auto;
-          padding: 1rem;
             h2{
               font-size: 2rem;
               color: var(--grey-light);
+              margin: 0.8rem;
             }
             h3{
               font-size: 2rem;
               font-weight: var(--size100);
+              margin: 0.8rem;
             }
         }
         p{
           font-size: 1.5rem;
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
         }
         .artContainer__price{
           display: flex;
