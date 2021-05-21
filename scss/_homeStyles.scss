@@ -296,15 +296,12 @@ nav div {
   text-align: justify;
 }
 
-.aboutContainer__intention button {
+.aboutContainer__intention a {
   background-color: var(--purple-rocks);
   border: none;
   width: auto;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
   padding: 1.5rem;
-}
-
-.aboutContainer__intention button a {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 1.5rem;
@@ -432,36 +429,33 @@ nav div {
 
 /* Button styles  */
 
-.projectContainer__text button {
+.projectContainer__text a {
   background-color: var(--yellow-high);
   border: none;
-  color: var(--grey-hard);
-  width: 130px;
-  height: 40px;
+  width: 10rem;
+  padding: 1.5rem;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-}
-.projectContainer .projectContainer__text button a {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 3rem;
   letter-spacing: -1px;
+  color: var(--grey-light);
 }
 
-.projectContainer__text--justifyRight button {
+
+.projectContainer__text--justifyRight a {
   background-color: var(--yellow-high);
   border: none;
-  color: var(--grey-hard);
-  width: 130px;
-  height: 40px;
+  width: 10rem;
+  padding: 1.5rem;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-}
-
-.projectContainer .projectContainer__text--justifyRight button a {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 3rem;
   letter-spacing: -1px;
+  color: var(--grey-light);
 }
+
 
 /* styles viva project */
 
@@ -515,22 +509,22 @@ nav div {
   box-shadow: 3px 7px 15px -7px #6e6e6e;
 }
 
-.projectContainer__worksButton {
+.projectContainer__cta a {
   background-color: var(--yellow-high);
   border: none;
-  color: var(-grey-hard);
-  width: 100%;
-  height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  text-align: center;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
   margin-left: 5px;
-}
-
-.projectContainer__worksButton a {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--grey-light);
 }
+
 
 /* styles shop section*/
 
@@ -677,15 +671,16 @@ nav div {
   color: var(--grey-light);
 }
 
-.productContent__description .productContent__descriptionButton button {
+.productContent__description .productContent__descriptionButton a {
   background-color: var(--beige-light);
   border: 1px solid var(--grey-light);
   color: var(--grey-light);
   box-shadow: 3px 7px 15px -7px #6e6e6e;
-  width: 12rem;
-  height: 3rem;
-}
-.productContent__descriptionButton button a {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  justify-content: center;
+  padding: 1rem;
   text-decoration: none;
   color: var(--grey-light);
   font-family: var(--font-Archivo);
@@ -710,22 +705,24 @@ nav div {
   box-shadow: 3px 7px 15px -7px #6e6e6e;
 }
 
-.shopContainer__shopButton {
+.shopContainer__cta a {
   background-color: var(--purple-rocks);
   border: none;
   width: auto;
-  height: auto;
-  padding: 1rem;
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem 2rem;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
   margin-left: 5px;
-}
-
-.shopContainer__shopButton a {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--beige-light);
 }
+
+
 
 /* styles contact section*/
 
@@ -820,22 +817,21 @@ nav div {
   margin-top: 3rem;
 }
 
-.contactContainer__download button {
+.contactContainer__download a{
   background-color: var(--grey-light);
   border: none;
   width: auto;
   height: auto;
+  display: inline-flex;
   box-shadow: 3px 7px 15px -7px #6e6e6e;
   padding: 1rem;
-  margin-bottom: 3rem;
-}
-
-.contactContainer__download button a {
+  margin: 1rem 0 2rem 0;
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--yellow-high);
 }
+
 
 /* styles footer*/
 
