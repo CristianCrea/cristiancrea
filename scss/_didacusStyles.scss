@@ -66,11 +66,9 @@ main{
         .price{
           @include price(2rem);
         }
-        button{
+        a {
           @include buttonWhite(15rem); 
-            a{
-              @include textbutton(2rem)
-            }
+          @include textbutton(2rem);
         }
     }
     .artContainer__photo{

@@ -7,6 +7,9 @@
     box-shadow: 3px 7px 15px -7px #6e6e6e;
     width: $width; 
     height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }  
 
 @mixin textbutton ($fontsize) {
@@ -30,11 +33,9 @@
   align-items: center; 
   width: 100% - 20;
   margin: 2rem auto;
-    button{
+    a{
       @include buttonWhite(30rem); 
-        a{
-        @include textbutton(2rem)
-        }
+      @include textbutton(2rem);
     } 
     h1{
       @extend %titlePurple;

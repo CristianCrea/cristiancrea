@@ -15,7 +15,7 @@
   --font-Archivo: "Archivo Black", sans-serif; }
 
 /* STYLES WORK PAGE */
-.worksMain__title h1, .projectsMain__title h1 {
+.worksMain__title h1, h1 {
   font-size: 6rem;
   text-align: right;
   color: var(--purple-rocks);
@@ -27,19 +27,21 @@
   align-items: center;
   width: 80%;
   margin: 2rem auto; }
-  .worksMain__title button {
+  .worksMain__title a {
     background-color: var(--beige-light);
     border: 1px solid var(--grey-light);
     color: var(--grey-light);
     box-shadow: 3px 7px 15px -7px #6e6e6e;
     width: 30rem;
-    height: 3rem; }
-    .worksMain__title button a {
-      text-decoration: none;
-      color: var(--grey-light);
-      font-family: var(--font-Archivo);
-      font-size: 2rem;
-      letter-spacing: -1px; }
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--grey-light);
+    font-family: var(--font-Archivo);
+    font-size: 2rem;
+    letter-spacing: -1px; }
 
 .feedworks {
   display: grid;
@@ -223,19 +225,21 @@ main {
       font-size: 2rem;
       color: var(--grey-light);
       margin-bottom: 0.8rem; }
-    .artContainer .artContainer_text button {
+    .artContainer .artContainer_text a {
       background-color: var(--beige-light);
       border: 1px solid var(--grey-light);
       color: var(--grey-light);
       box-shadow: 3px 7px 15px -7px #6e6e6e;
       width: 15rem;
-      height: 3rem; }
-      .artContainer .artContainer_text button a {
-        text-decoration: none;
-        color: var(--grey-light);
-        font-family: var(--font-Archivo);
-        font-size: 2rem;
-        letter-spacing: -1px; }
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--grey-light);
+      font-family: var(--font-Archivo);
+      font-size: 2rem;
+      letter-spacing: -1px; }
   .artContainer .artContainer__photo {
     width: 50rem;
     height: auto;
@@ -286,19 +290,21 @@ main {
   align-items: center;
   width: 70%;
   margin: 20px auto; }
-  .projectsMain__title button {
+  .projectsMain__title a {
     background-color: var(--beige-light);
     border: 1px solid var(--grey-light);
     color: var(--grey-light);
     box-shadow: 3px 7px 15px -7px #6e6e6e;
     width: 30rem;
-    height: 3rem; }
-    .projectsMain__title button a {
-      text-decoration: none;
-      color: var(--grey-light);
-      font-family: var(--font-Archivo);
-      font-size: 2rem;
-      letter-spacing: -1px; }
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--grey-light);
+    font-family: var(--font-Archivo);
+    font-size: 2rem;
+    letter-spacing: -1px; }
 
 .imageContainer {
   width: 70%;
@@ -319,7 +325,10 @@ main {
     color: var(--grey-light);
     box-shadow: 3px 7px 15px -7px #6e6e6e;
     width: 10rem;
-    height: 3rem; }
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
     .returnButton button a {
       text-decoration: none;
       color: var(--grey-light);
@@ -357,7 +366,7 @@ main {
   .talkSection img {
     width: 15rem; }
   .talkSection .talkSection__contactCta {
-    margin-bottom: 2rem;
+    margin: 1rem;
     background-color: var(--beige-light);
     border: 2px solid var(--grey-light);
     box-shadow: 3px 7px 15px -7px #6e6e6e;
@@ -370,20 +379,26 @@ main {
     font-family: var(--font-Archivo);
     font-size: 2rem;
     letter-spacing: -1px; }
-  .talkSection button {
+  .talkSection .talkSection__wtp {
+    border: none;
+    box-shadow: none;
+    width: 15rem; }
+  .talkSection a {
     margin-top: 8rem;
     background-color: var(--beige-light);
     border: 1px solid var(--grey-light);
     color: var(--grey-light);
     box-shadow: 3px 7px 15px -7px #6e6e6e;
     width: 30rem;
-    height: 3rem; }
-    .talkSection button a {
-      text-decoration: none;
-      color: var(--grey-light);
-      font-family: var(--font-Archivo);
-      font-size: 2rem;
-      letter-spacing: -1px; }
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--grey-light);
+    font-family: var(--font-Archivo);
+    font-size: 2rem;
+    letter-spacing: -1px; }
 
 * {
   margin: 0;

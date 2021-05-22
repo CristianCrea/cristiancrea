@@ -16,7 +16,7 @@
       width: 15rem;
     }
     .talkSection__contactCta{
-      margin-bottom: 2rem;
+      margin: 1rem;
       background-color: var(--beige-light);
       border: 2px solid var(--grey-light);
       box-shadow: 3px 7px 15px -7px #6e6e6e;
@@ -26,12 +26,15 @@
       padding: 2rem;
       @include textbutton(2rem)
     }
-    button{
+    .talkSection__wtp{
+      border: none;
+      box-shadow: none;
+      width: 15rem;
+    }
+    a {
       margin-top: 8rem;
       @include buttonWhite(30rem); 
-        a{
-          @include textbutton(2rem)
-        }
+      @include textbutton(2rem)
     }
-}
+    }
 
