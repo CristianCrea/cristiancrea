@@ -21,6 +21,21 @@ main {
   flex-direction: column;
 }
 
+/*Buttons hovers*/
+
+@mixin hoverpurple{
+  background-color: var(--beige-light);
+  color: var(--grey-light);
+  border: 1px solid var(--grey-light);
+}
+
+@mixin hoveryellow{
+  background-color: var(--purple-rocks);
+  color: var(--beige-light);
+}
+
+
+
 /* styles home page */
 
 /* styles menu*/
@@ -308,6 +323,11 @@ nav div {
   color: var(--beige-light);
 }
 
+.aboutContainer__intention a:hover{
+  @include hoverpurple;
+}
+
+
 .aboutContainer__trajectory {
   width: 100%;
   height: auto;
@@ -440,6 +460,10 @@ nav div {
   font-size: 3rem;
   letter-spacing: -1px;
   color: var(--grey-light);
+}
+
+.projectContainer__text a:hover{
+  @include hoveryellow;
 }
 
 

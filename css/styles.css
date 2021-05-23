@@ -417,6 +417,7 @@ main {
   display: flex;
   flex-direction: column; }
 
+/*Buttons hovers*/
 /* styles home page */
 /* styles menu*/
 nav ul li a {
@@ -657,6 +658,11 @@ nav div {
   font-size: 1.5rem;
   color: var(--beige-light); }
 
+.aboutContainer__intention a:hover {
+  background-color: var(--beige-light);
+  color: var(--grey-light);
+  border: 1px solid var(--grey-light); }
+
 .aboutContainer__trajectory {
   width: 100%;
   height: auto;
@@ -772,6 +778,10 @@ nav div {
   font-size: 3rem;
   letter-spacing: -1px;
   color: var(--grey-light); }
+
+.projectContainer__text a:hover {
+  background-color: var(--purple-rocks);
+  color: var(--beige-light); }
 
 .projectContainer__text--justifyRight a {
   background-color: var(--yellow-high);
