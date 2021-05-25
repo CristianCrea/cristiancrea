@@ -365,6 +365,7 @@ main {
       line-height: 2.8rem;
       text-align: left; } }
 
+/*Buttons hovers*/
 .talkSection {
   width: 100vw;
   height: 100vh;
@@ -380,6 +381,8 @@ main {
     margin-bottom: 2rem; }
   .talkSection img {
     width: 15rem; }
+  .talkSection img:hover {
+    filter: drop-shadow(5px 5px 2px #A6ABA6); }
   .talkSection .talkSection__contactCta {
     margin: 1rem;
     background-color: var(--beige-light);
@@ -414,6 +417,10 @@ main {
     font-family: var(--font-Archivo);
     font-size: 2rem;
     letter-spacing: -1px; }
+  .talkSection .backtoGallery:hover {
+    background-color: var(--purple-rocks);
+    color: var(--beige-light);
+    border: none; }
 
 * {
   margin: 0;
