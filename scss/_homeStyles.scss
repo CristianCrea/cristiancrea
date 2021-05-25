@@ -238,6 +238,10 @@ nav div {
   right: 0;
 }
 
+.mobileMenu{
+  display: none;
+}
+
 /* styles about section*/
 
 .aboutContainer {
@@ -901,6 +905,53 @@ footer p {
 /*MEDIA QUERIES HOME TABLET*/
 
 @media screen and (max-width: 768px){
+  /*MOBILE MENU STYLES*/
+    .mobileMenu{
+      display: block;
+      position: relative;
+      top: 5rem;
+      left: 5rem;
+      z-index: 1;
+      -webkit-user-select: none;
+      user-select: none;
+        a{
+          text-decoration: none;
+          color: var(--grey-hard);
+          transition: color 0.3s ease;
+        }
+        a:hover{
+          color: var(--purple-rocks)
+        }
+        input{
+          display: block;
+          width: 4rem;
+          height: 3.2rem;
+          position: absolute;
+          top:-7px;
+          left:-5px;
+          cursor: pointer;
+          opacity: 0;
+          z-index: 2;
+          -webkit-touch-callout: none;
+        }
+        span{
+          display: block;
+          width: 33px;
+          height: 4px;
+          margin-bottom: 5px;
+          position: relative;
+          background: var(--grey-hard);
+          border-radius: 3px;
+          z-index: 1;
+          transform-origin: 4px 0px;
+          transition: transform 0.5s
+          cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s
+          cubic-bezier(0.77, 0.2, 0.05, 1),
+          opacity 0.55s ease;
+
+        }
+    }
     /*TABLET 768PX INTRO SECTION*/
     .contentContainer{
       width: 75%; 
