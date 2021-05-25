@@ -20,6 +20,14 @@
     letter-spacing: -1px;
 }
 
+/*Buttons hovers*/
+
+@mixin hoverwhite{
+  background-color: var(--purple-rocks);
+  color: var(--beige-light);
+  border: none;
+}
+
 %titlePurple{
   font-size: 6rem;
   text-align: right;
@@ -37,6 +45,9 @@
       @include buttonWhite(30rem); 
       @include textbutton(2rem);
     } 
+    a:hover {
+      @include hoverwhite;
+    }
     h1{
       @extend %titlePurple;
     }
@@ -48,6 +59,7 @@
   grid-template: repeat(10, 1fr) / repeat(10, 1fr);
   width: 100vh;
 }
+
 
 .projectsGrid {
   display: grid;

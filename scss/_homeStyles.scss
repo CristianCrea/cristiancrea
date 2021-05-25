@@ -34,6 +34,11 @@ main {
   color: var(--beige-light);
 }
 
+@mixin hoverwhite{
+  background-color: var(--purple-rocks);
+  color: var(--beige-light);
+  border: none;
+}
 
 
 /* styles home page */
@@ -462,6 +467,7 @@ nav div {
   color: var(--grey-light);
 }
 
+
 .projectContainer__text a:hover{
   @include hoveryellow;
 }
@@ -478,6 +484,10 @@ nav div {
   font-size: 3rem;
   letter-spacing: -1px;
   color: var(--grey-light);
+}
+
+.projectContainer__text--justifyRight a:hover{
+  @include hoveryellow;
 }
 
 
@@ -547,6 +557,10 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--grey-light);
+}
+
+.projectContainer__cta a:hover{
+  @include hoveryellow;
 }
 
 
@@ -712,6 +726,10 @@ nav div {
   letter-spacing: -1px;
 }
 
+.productContent__description .productContent__descriptionButton a:hover{
+  @include hoverwhite;
+}
+
 /* Styles cta shop section */
 
 .shopContainer__cta {
@@ -746,7 +764,9 @@ nav div {
   color: var(--beige-light);
 }
 
-
+.shopContainer__cta a:hover {
+  @include hoverpurple;
+}
 
 /* styles contact section*/
 
@@ -854,6 +874,10 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--yellow-high);
+}
+
+.contactContainer__download a:hover {
+  @include hoveryellow;
 }
 
 

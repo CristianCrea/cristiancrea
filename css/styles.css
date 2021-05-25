@@ -15,6 +15,7 @@
   --font-Archivo: "Archivo Black", sans-serif; }
 
 /* STYLES WORK PAGE */
+/*Buttons hovers*/
 .worksMain__title h1, h1 {
   font-size: 6rem;
   text-align: right;
@@ -42,6 +43,10 @@
     font-family: var(--font-Archivo);
     font-size: 2rem;
     letter-spacing: -1px; }
+  .worksMain__title a:hover {
+    background-color: var(--purple-rocks);
+    color: var(--beige-light);
+    border: none; }
 
 .feedworks {
   display: grid;
@@ -179,6 +184,7 @@
       line-height: 3.5rem; } }
 
 /*STYLES DIDACUS PAGE*/
+/*Buttons hovers*/
 main {
   display: flex;
   flex-direction: column;
@@ -240,6 +246,10 @@ main {
       font-family: var(--font-Archivo);
       font-size: 2rem;
       letter-spacing: -1px; }
+    .artContainer .artContainer_text a:hover {
+      background-color: var(--purple-rocks);
+      color: var(--beige-light);
+      border: none; }
   .artContainer .artContainer__photo {
     width: 50rem;
     height: auto;
@@ -283,6 +293,7 @@ main {
         height: 18.6rem; } }
 
 /*STYLES PROJECTS PAGES*/
+/*Buttons hovers*/
 .projectsMain__title {
   display: flex;
   margin-top: 3rem;
@@ -305,6 +316,10 @@ main {
     font-family: var(--font-Archivo);
     font-size: 2rem;
     letter-spacing: -1px; }
+  .projectsMain__title a:hover {
+    background-color: var(--purple-rocks);
+    color: var(--beige-light);
+    border: none; }
 
 .imageContainer {
   width: 70%;
@@ -795,6 +810,10 @@ nav div {
   letter-spacing: -1px;
   color: var(--grey-light); }
 
+.projectContainer__text--justifyRight a:hover {
+  background-color: var(--purple-rocks);
+  color: var(--beige-light); }
+
 /* styles viva project */
 .projectContainer__text--justifyRight {
   display: flex;
@@ -852,6 +871,10 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--grey-light); }
+
+.projectContainer__cta a:hover {
+  background-color: var(--purple-rocks);
+  color: var(--beige-light); }
 
 /* styles shop section*/
 .shopContainer {
@@ -990,6 +1013,11 @@ nav div {
   font-size: 2rem;
   letter-spacing: -1px; }
 
+.productContent__description .productContent__descriptionButton a:hover {
+  background-color: var(--purple-rocks);
+  color: var(--beige-light);
+  border: none; }
+
 /* Styles cta shop section */
 .shopContainer__cta {
   display: flex;
@@ -1019,6 +1047,11 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--beige-light); }
+
+.shopContainer__cta a:hover {
+  background-color: var(--beige-light);
+  color: var(--grey-light);
+  border: 1px solid var(--grey-light); }
 
 /* styles contact section*/
 .contactContainer {
@@ -1112,6 +1145,10 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--yellow-high); }
+
+.contactContainer__download a:hover {
+  background-color: var(--purple-rocks);
+  color: var(--beige-light); }
 
 /* styles footer*/
 footer {

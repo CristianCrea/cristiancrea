@@ -1,5 +1,12 @@
 /*STYLES PROJECTS PAGES*/
 
+/*Buttons hovers*/
+@mixin hoverwhite{
+  background-color: var(--purple-rocks);
+  color: var(--beige-light);
+  border: none;
+}
+
 .projectsMain__title{
   display: flex;
   margin-top: 3rem;
@@ -11,10 +18,13 @@
       @include buttonWhite(30rem); 
       @include textbutton(2rem);
     }
-    } 
-    h1{
-      @extend %titlePurple;
-    }
+    a:hover {
+    @include hoverwhite;
+    }   
+} 
+h1{
+  @extend %titlePurple;
+}
 
 .imageContainer{
   width: 70%;
