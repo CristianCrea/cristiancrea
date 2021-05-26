@@ -635,6 +635,7 @@ nav div {
   font-size: 3.5rem;
   text-align: right;
   color: var(--purple-rocks);
+  margin-left: 1rem;
 }
 
 .shopContainer__title p {
@@ -643,6 +644,7 @@ nav div {
   text-align: right;
   color: var(--grey-light);
   margin-top: -2rem;
+  margin-left: 1rem;
 }
 
 .shopContainer__products1 {
@@ -1005,10 +1007,17 @@ footer p {
       font-size: 2.5rem;
       margin-top: -4px;
     }
+
     .projectContainer__text--justifyRight :nth-child(2){
       font-size: 2.5rem;
       margin-top: -4px;
     }
+
+    .projectContainer__text :nth-child(3),
+    .projectContainer__text--justifyRight :nth-child(3){
+      text-align: left;
+    }
+
     .projectContainer__worksButton a {
       font-size: 1.5rem;
     }
@@ -1088,6 +1097,7 @@ footer p {
   /*MOBILE 699PX ABOUT SECTION*/
   .aboutContainer__bio p {
     width: 100%;
+    text-align: left;
   }
   .aboutContainer__intention{
     flex-direction: column;
@@ -1097,6 +1107,10 @@ footer p {
     width: 100%;
     margin: 0 0 2rem 0;
   }
+  .aboutContainer__intention div p{
+    text-align: left;
+  }
+
   .aboutContainer__trajectory{
     flex-direction: column;
   }
@@ -1106,16 +1120,19 @@ footer p {
   /*MOBILE 699PX WORKS SECTION*/
   .projectContainer{
     flex-direction: column;
+    width: 100%;
   }
   .projectContainer__image img{
     margin: 0px 0px 1rem 0;
   }
   .projectContainer__viva{
     flex-direction: column-reverse;
+    width: 100%;
   }
   .projectContainer__text--justifyRight{
     align-items: flex-start;
   }
+  
   .projectContainer__image--marginLeft img{
     margin: 0px 0px 1rem 0;
   }
