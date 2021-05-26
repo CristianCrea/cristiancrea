@@ -41,11 +41,12 @@ h1{
   display: flex;
   margin: 2rem auto;
   justify-content: center;
-    button{
-      @include buttonWhite(10rem); 
-        a{
-          @include textbutton(2rem);
-        }
+    a{
+      @include buttonWhite(10rem);
+      @include textbutton(2rem);
+    }
+    a:hover {
+    @include hoverwhite;
     }
 }
 

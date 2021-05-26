@@ -334,7 +334,7 @@ main {
   display: flex;
   margin: 2rem auto;
   justify-content: center; }
-  .returnButton button {
+  .returnButton a {
     background-color: var(--beige-light);
     border: 1px solid var(--grey-light);
     color: var(--grey-light);
@@ -343,13 +343,16 @@ main {
     height: 3rem;
     display: flex;
     align-items: center;
-    justify-content: center; }
-    .returnButton button a {
-      text-decoration: none;
-      color: var(--grey-light);
-      font-family: var(--font-Archivo);
-      font-size: 2rem;
-      letter-spacing: -1px; }
+    justify-content: center;
+    text-decoration: none;
+    color: var(--grey-light);
+    font-family: var(--font-Archivo);
+    font-size: 2rem;
+    letter-spacing: -1px; }
+  .returnButton a:hover {
+    background-color: var(--purple-rocks);
+    color: var(--beige-light);
+    border: none; }
 
 /*MEDIA QUERIES PROJECTS MOBILE 425PX */
 @media screen and (max-width: 426px) {
@@ -441,7 +444,7 @@ main {
 
 /*Buttons hovers*/
 /* styles home page */
-/* STYLES MOBILE MENU*/
+/* STYLES SUPERIOR MENU*/
 header {
   width: 100%; }
   header label {
@@ -464,7 +467,7 @@ header {
   .topSection__menu ul li:hover {
     background-color: var(--yellow-high); }
 
-/* styles menu*/
+/* STYLES LATERAL MENU*/
 nav ul li a {
   text-decoration: none;
   font-family: var(--font-Monserrat);
@@ -474,7 +477,7 @@ nav ul li a {
 
 li {
   list-style: none;
-  margin: 15px 0; }
+  margin: 1.5rem 1rem 1.5rem 0; }
 
 nav div {
   width: 4rem;
@@ -626,7 +629,7 @@ nav div {
   height: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   position: fixed;
   right: 0; }
 
