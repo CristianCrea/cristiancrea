@@ -72,7 +72,7 @@ main{
           align-items: flex-start;
         }
         .price{
-          @include price(2rem);
+          @include price(1.7rem);
         }
         a {
           @include buttonWhite(15rem); 

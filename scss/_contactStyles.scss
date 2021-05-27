@@ -31,7 +31,7 @@
       background-color: var(--beige-light);
       border: 2px solid var(--grey-light);
       box-shadow: 3px 7px 15px -7px #6e6e6e;
-      width: 40rem;
+      width: 30rem;
       height: auto;
       text-align: center;
       padding: 2rem;
@@ -43,7 +43,7 @@
       width: 15rem;
     }
     a {
-      margin-top: 8rem;
+      margin-top: 8rem ;
       @include buttonWhite(30rem); 
       @include textbutton(2rem);
     }

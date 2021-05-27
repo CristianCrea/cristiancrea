@@ -33,6 +33,7 @@
   text-align: right;
   color: var(--purple-rocks);
   line-height: 5rem;
+  margin: 2rem 0 2rem 1.5rem;
 }
 
 .worksMain__title{
@@ -44,6 +45,7 @@
     a{
       @include buttonWhite(30rem); 
       @include textbutton(2rem);
+      align-self: center;
     } 
     a:hover {
       @include hoverwhite;
@@ -216,7 +218,7 @@
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   }
   

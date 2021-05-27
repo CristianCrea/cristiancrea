@@ -118,6 +118,7 @@ nav div {
 
 .logoContainer img {
   width: 7rem;
+  height: auto;
   position: fixed;
 }
 
@@ -368,6 +369,7 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 1.5rem;
   color: var(--beige-light);
+  text-align: center;
 }
 
 .aboutContainer__intention a:hover{
@@ -795,7 +797,6 @@ nav div {
   background-color: var(--purple-rocks);
   border: none;
   width: auto;
-  height: 4rem;
   display: inline-flex;
   align-items: center;
   justify-items: center;
@@ -806,6 +807,7 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--beige-light);
+  text-align: center;
 }
 
 .shopContainer__cta a:hover {
@@ -918,6 +920,7 @@ nav div {
   font-family: var(--font-Archivo);
   font-size: 2rem;
   color: var(--yellow-high);
+  text-align: center;
 }
 
 .contactContainer__download a:hover {
@@ -1081,6 +1084,7 @@ footer p {
   }
   .logoContainer img {
     width: 5rem;
+    height: auto;
     position: relative;
   }
   .introContainer{

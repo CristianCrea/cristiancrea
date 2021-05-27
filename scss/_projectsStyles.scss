@@ -50,6 +50,13 @@ h1{
     }
 }
 
+/*MEDIA QUERIES PROJECTS MOBILE 768PX */
+@media screen and (max-width: 768px){
+  .projectsMain__title h1{
+    font-size: 4.5rem;
+    line-height: 4rem;
+  }
+}
 /*MEDIA QUERIES PROJECTS MOBILE 425PX */
 @media screen and (max-width: 426px){
   .projectsMain__title{

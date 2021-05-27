@@ -20,7 +20,8 @@
   font-size: 6rem;
   text-align: right;
   color: var(--purple-rocks);
-  line-height: 5rem; }
+  line-height: 5rem;
+  margin: 2rem 0 2rem 1.5rem; }
 
 .worksMain__title {
   display: flex;
@@ -42,7 +43,8 @@
     color: var(--grey-light);
     font-family: var(--font-Archivo);
     font-size: 2rem;
-    letter-spacing: -1px; }
+    letter-spacing: -1px;
+    align-self: center; }
   .worksMain__title a:hover {
     background-color: var(--purple-rocks);
     color: var(--beige-light);
@@ -170,7 +172,7 @@
     grid-template-areas: "outstanding" "secondary" "tertiary" "panoramic" "simple1" "simple2" "simple3";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    width: 80%;
+    width: 75%;
     margin: 0 auto; }
   .worksMain__title {
     display: flex;
@@ -228,7 +230,7 @@ main {
       align-items: flex-start; }
     .artContainer .artContainer_text .price {
       font-family: var(--font-Archivo);
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: var(--grey-light);
       margin-bottom: 0.8rem; }
     .artContainer .artContainer_text a {
@@ -354,6 +356,12 @@ main {
     color: var(--beige-light);
     border: none; }
 
+/*MEDIA QUERIES PROJECTS MOBILE 768PX */
+@media screen and (max-width: 768px) {
+  .projectsMain__title h1 {
+    font-size: 4.5rem;
+    line-height: 4rem; } }
+
 /*MEDIA QUERIES PROJECTS MOBILE 425PX */
 @media screen and (max-width: 426px) {
   .projectsMain__title {
@@ -391,7 +399,7 @@ main {
     background-color: var(--beige-light);
     border: 2px solid var(--grey-light);
     box-shadow: 3px 7px 15px -7px #6e6e6e;
-    width: 40rem;
+    width: 30rem;
     height: auto;
     text-align: center;
     padding: 2rem;
@@ -500,6 +508,7 @@ nav div {
 
 .logoContainer img {
   width: 7rem;
+  height: auto;
   position: fixed; }
 
 .languageContainer button a:hover {
@@ -709,7 +718,8 @@ nav div {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 1.5rem;
-  color: var(--beige-light); }
+  color: var(--beige-light);
+  text-align: center; }
 
 .aboutContainer__intention a:hover {
   background-color: var(--beige-light);
@@ -1076,7 +1086,6 @@ nav div {
   background-color: var(--purple-rocks);
   border: none;
   width: auto;
-  height: 4rem;
   display: inline-flex;
   align-items: center;
   justify-items: center;
@@ -1086,7 +1095,8 @@ nav div {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 2rem;
-  color: var(--beige-light); }
+  color: var(--beige-light);
+  text-align: center; }
 
 .shopContainer__cta a:hover {
   background-color: var(--beige-light);
@@ -1184,7 +1194,8 @@ nav div {
   text-decoration: none;
   font-family: var(--font-Archivo);
   font-size: 2rem;
-  color: var(--yellow-high); }
+  color: var(--yellow-high);
+  text-align: center; }
 
 .contactContainer__download a:hover {
   background-color: var(--purple-rocks);
@@ -1299,6 +1310,7 @@ footer p {
     margin-bottom: 0; }
   .logoContainer img {
     width: 5rem;
+    height: auto;
     position: relative; }
   .introContainer {
     margin: 0 0 2rem 0; }
