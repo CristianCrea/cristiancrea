@@ -1,16 +1,26 @@
+
+
 let nombre = prompt("Para comenzar con la experiencia de compra ingresa tu nombre");
 let msg;
 let medida;
 
 while (msg != "ver cuadros") {
-  msg = prompt("¿Te interesa un cuadro personalizado o comprar uno del site? Ingresa la palabra personalizado o pintado para continuar. Escribe la frase ver cuadros y pulsa ok para visitar la galeria");
+  msg = prompt("Ingresa la palabra de tu referencia favorita, elefante, caballo, flamingo, toronja");
   switch (msg) {
-    case "personalizado":
-      alert("Hola " + nombre + " " + "Chatea directamente con el artista al +57 305 712 6569 y decora tu espacio a tu gusto. Escribe la frase ver cuadros y pulsa ok para visitar la galeria");
+    case "elefante":
+      alert("Hola " + nombre + " " + "en espacio queda bien un Elefante de Mañana en Oleo sobre lienzo, 100 x 70cms por 650.000, escribe ver cuadros para verlo");
       break;
 
-    case "pintado":
-      alert("Hola " + nombre + " " + "Te sugerimos fijarte en los descuentos de temporada. Escribe la frase ver cuadros y pulsa ok para visitar la galeria");
+    case "cabello":
+      alert("Hola " + nombre + " " + "en espacio queda bien un Galopando Colores en Oleo sobre lienzo, 120 x 80cms por 700.000, escribe ver cuadros para verlo");
+      break;
+
+    case "flamingo":
+      alert("Hola " + nombre + " " + "en espacio queda bien un Tropical flamingo en Oleo sobre lienzo, 150 x 210cms por 750.000, escribe ver cuadros para verlo");
+      break;
+
+    case "toronja":
+      alert("Hola " + nombre + " " + "en espacio queda bien un Jungle orange en Oleo sobre lienzo, 80 x 50cms por 800.000, escribe ver cuadros para verlo");
       break;
 
     default:
@@ -18,3 +28,27 @@ while (msg != "ver cuadros") {
       break;
   }
 }
+
+
+//Creación de objetos, función constructora y método de las obras de arte
+
+function obraDeArte (nombre, sustrato, tamaño, precio) {
+  this.nombre = nombre;
+  this.sustrato = sustrato;
+  this.tamaño = tamaño;
+  this.precio = precio
+}
+
+let cuadelefante = new obraDeArte("Elefante de Mañana", "Oleo sobre lienzo", "100 x 70cms", "650.000");
+let caballo = new obraDeArte("Galopando Colores", "Oleo sobre lienzo", "120 x 80cms", "700.000");
+let flamingo = new obraDeArte("Tropical flamingo", "Oleo sobre lienzo", "150 x 210cms", "750.000");
+let toronja = new obraDeArte("Jungle orange", "Oleo sobre lienzo", "80 x 50cms", "800.000");
+
+console.log(elefante);
+console.log(caballo);
+console.log(flamingo);
+console.log(toronja);
+
+
+
+
