@@ -5,7 +5,7 @@ let msg;
 let medida;
 
 while (msg != "ver cuadros") {
-  msg = prompt("Ingresa la palabra de tu referencia favorita, elefante, caballo, flamingo, toronja");
+  msg = prompt("Ingresa la palabra de tu referencia favorita, elefante, caballo, flamingo, toronja o ver cuadros para salir");
   switch (msg) {
     case "elefante":
       alert("Hola " + nombre + " " + "en espacio queda bien un Elefante de Mañana en Oleo sobre lienzo, 100 x 70cms por 650.000, escribe ver cuadros para verlo");
@@ -50,5 +50,18 @@ console.log(flamingo);
 console.log(toronja);
 
 
+//Array con los objetos del los cuadros y un filter de precio.
+let didacusCuadros = [
+  {nombre:"Elefante de Mañana", sustrato:"Oleo sobre lienzo", medida:"100 x 70cms", precio:"650000"},
+  {nombre:"Galopando Colores", sustrato:"Oleo sobre lienzo", medida: "120 x 80cms", precio:"700000"},
+  {nombre:"Tropical flamingo", sustrato:"Oleo sobre lienzo", medida:"150 x 210cms", precio:"750000"},
+  {nombre:"Jungle orange", sustrato:"Oleo sobre lienzo", medida:"80 x 50cms", precio:"800000"},
+]
+
+let filtroPrecio = didacusCuadros.filter(function(articulo){
+  return articulo.costo <= 700000
+})
+
+console.log(filtroPrecio)
 
 
