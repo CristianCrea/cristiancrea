@@ -1,4 +1,5 @@
 
+/*
 
 let nombre = prompt("Para comenzar con la experiencia de compra ingresa tu nombre");
 let msg;
@@ -64,4 +65,23 @@ let filtroPrecio = didacusCuadros.filter(function(articulo){
 
 console.log(filtroPrecio)
 
+*/
+
+//Simulador del precio final con IVA del 19%
+
+
+function masIva(precio, iva){
+      iva = iva || 19
+      var coniva = (precio + precio*iva/100);
+      return coniva;
+    }
+    var precio = Number(prompt("Introduce un precio de obra de arte para calcular su iva y precio final. Las opciones son 600000, 650000, 700000, 750000"));
+    var iva = Number(prompt("Introduce el iva del 19% ingresando el numero 19"));
+    if(iva > 0){
+      var resultado = masIva(precio, iva);
+    }
+    else{
+      var resultado = masIva(precio);
+    }
+    alert("Precio sin iva: " + precio + " Precio más Iva: " + resultado);
 
