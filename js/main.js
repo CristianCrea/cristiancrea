@@ -1,5 +1,4 @@
-
-/*
+/* 
 
 let nombre = prompt("Para comenzar con la experiencia de compra ingresa tu nombre");
 let msg;
@@ -30,6 +29,9 @@ while (msg != "ver cuadros") {
   }
 }
 
+*/
+
+
 
 //Creación de objetos, función constructora y método de las obras de arte
 
@@ -40,7 +42,7 @@ function obraDeArte (nombre, sustrato, tamaño, precio) {
   this.precio = precio
 }
 
-let cuadelefante = new obraDeArte("Elefante de Mañana", "Oleo sobre lienzo", "100 x 70cms", "650.000");
+let elefante = new obraDeArte("Elefante de Mañana", "Oleo sobre lienzo", "100 x 70cms", "650.000");
 let caballo = new obraDeArte("Galopando Colores", "Oleo sobre lienzo", "120 x 80cms", "700.000");
 let flamingo = new obraDeArte("Tropical flamingo", "Oleo sobre lienzo", "150 x 210cms", "750.000");
 let toronja = new obraDeArte("Jungle orange", "Oleo sobre lienzo", "80 x 50cms", "800.000");
@@ -51,7 +53,9 @@ console.log(flamingo);
 console.log(toronja);
 
 
+
 //Array con los objetos del los cuadros y un filter de precio.
+
 let didacusCuadros = [
   {nombre:"Elefante de Mañana", sustrato:"Oleo sobre lienzo", medida:"100 x 70cms", precio:"650000"},
   {nombre:"Galopando Colores", sustrato:"Oleo sobre lienzo", medida: "120 x 80cms", precio:"700000"},
@@ -60,15 +64,14 @@ let didacusCuadros = [
 ]
 
 let filtroPrecio = didacusCuadros.filter(function(articulo){
-  return articulo.costo <= 700000
+  return articulo.precio <= 700000
 })
 
 console.log(filtroPrecio)
 
-*/
 
 //Simulador del precio final con IVA del 19%
-
+/* 
 
 function masIva(precio, iva){
       iva = iva || 19
@@ -85,3 +88,4 @@ function masIva(precio, iva){
     }
     alert("Precio sin iva: " + precio + " Precio más Iva: " + resultado);
 
+*/
