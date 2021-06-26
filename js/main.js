@@ -31,7 +31,7 @@ while (msg != "ver cuadros") {
 
 */
 
-
+/* 
 
 //Creación de objetos, función constructora y método de las obras de arte
 
@@ -71,7 +71,7 @@ console.log(filtroPrecio)
 
 
 //Simulador del precio final con IVA del 19%
-/* 
+
 
 function masIva(precio, iva){
       iva = iva || 19
@@ -89,3 +89,19 @@ function masIva(precio, iva){
     alert("Precio sin iva: " + precio + " Precio más Iva: " + resultado);
 
 */
+
+const sectionTittle = document.getElementById("SectionTitle") 
+sectionTittle.innerHTML = "<b>Didacus  <br> Shop Art</b>"
+
+const list = document.getElementById("list")
+const arrayList = ["Elefante de Mañana", "Galopando Colores", "Tropical flamingo", "Jungle orange",]
+
+
+const arrayFragment = document.createDocumentFragment() 
+  arrayList.forEach (cuadro => {
+    const li = document.createElement("li")
+    li.textContent = cuadro
+    arrayFragment.appendChild(li)
+})
+
+list.appendChild(arrayFragment)

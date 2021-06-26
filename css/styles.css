@@ -192,6 +192,16 @@ main {
   flex-direction: column;
   width: 100%;
   height: auto; }
+  main span {
+    align-self: center;
+    text-justify: center;
+    font-size: 4rem;
+    color: var(--purple-rocks);
+    font-family: var(--font-Archivo); }
+  main ul {
+    margin-left: 5rem;
+    font-size: 2.5rem;
+    align-self: center; }
 
 /* CONTAINER STYLES*/
 .artContainer {
