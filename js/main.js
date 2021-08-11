@@ -1,21 +1,17 @@
 //Desafio entregable clase 3 y 4 Simulador de precio + impuesto de un producto 
 
 function masIva(precio, iva){
-      iva = iva || 19
       var coniva = (precio + precio*iva/100);
       return coniva;
     }
-    var precio = Number(prompt("Introduce el precio de la obra de arte para calcular su iva y precio final. Las opciones son 650000, 700000, 750000, 800000"));
-    var iva = Number(prompt("Introduce el iva del 19% ingresando el numero 19"));
+    var precio = Number(prompt('Introduce el precio de la obra de arte para calcular su iva y precio final. Las opciones son 650000, 700000, 750000, 800000'));
+    var iva = Number(prompt('Introduce el iva del 19% ingresando el numero "19"'));
+  
     if(iva > 0){
       var resultado = masIva(precio, iva);
     }
-    else{
-      var resultado = masIva(precio);
-    }
     alert(`El Precio de tu producto sin iva es: ${precio} y el precio más Iva es de: ${resultado}`);
 
-    
 /* 
 
 Ejercicio While para elección de producto
