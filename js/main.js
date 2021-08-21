@@ -45,8 +45,7 @@ galopandoColores.addToCart(3)
 console.log(carritoCompras)
 tropicalFlamingo.addToCart(10)
 console.log(carritoCompras)
-jungleOrange.addToCart(6)
-
+jungleOrange.addToCart(8)
 
 /* 
 
