@@ -151,3 +151,44 @@ main{
   }
   }
 }
+
+//Styles for Js Elements 
+
+.yellowBox{
+  width: 30rem;
+  height: auto;
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--yellow-high);
+    h2{
+      font-size: 2rem;
+      color: var(--grey-light);
+      margin-bottom: 0.8rem;
+    }
+    h3{
+      font-size: 2rem;
+      font-weight: var(--size100);
+      margin-bottom: 0.8rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+}
+
+
+
+.pricejs{ 
+    @include price(2.2rem);
+    margin-top: 7rem;
+}
+.btnBuyJs {
+  
+          @include buttonWhite(15rem); 
+          @include textbutton(2rem);
+          margin-top:1rem;
+}
+.btnBuyJs:hover {
+          @include hoverwhite;
+}

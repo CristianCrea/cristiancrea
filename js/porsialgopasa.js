@@ -3,23 +3,21 @@
 let carritoCompras = []
 
 class Producto {
-    constructor(id, title, material, description, price, stock) {
-        this.id = id
-        this.title = title
-        this.material = material
-        this.description = description
-        this.price = price
-        this.stock= stock
+    constructor(id, nombre, precio, inventario) {
+        this.inventario = inventario
+        this.nombre = nombre
+        this.precio = precio
+        this.inventario = inventario
     }
-    getId () {
-        return this.stock
+    getId = function () {
+        return this.inventario
     }
 
-    getTotal (cantidad) {
-        return this.price * cantidad
+    getTotal = function (cantidad) {
+        return this.precio * cantidad
     }
 
-    getCompra (cantidad) {
+    getCompra = function (cantidad) {
         return {
             product: this,
             quantity: cantidad,
@@ -27,74 +25,29 @@ class Producto {
         }
     }
 
-    addToCart (cantidad) {
+    addToCart = function (cantidad) {
         carritoCompras.push(this.getCompra(cantidad))
     }
 }
 
-const elefanteDeManana = new Producto(1, 'Elefante de Mañana', 'Oleo sobre lienzo', 'La fuerza, tranquilidad y la vibración color permearán tu espacio de la mejor forma', 650000, 50)
-const galopandoColores = new Producto(2, 'Galopando Colores', 'Oleo sobre lienzo', 'Si galopas conmigo, encontrarás paz, tranquilidad y shot de energia y vitalidad que transmite mi ser.', 700000, 10)
-const tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 'Oleo sobre lienzo', 'La tranquilidad y el garbo plasmados en un solo lugar. Déjate conquistar por la elegancia de esta pieza.', 750000, 30)
-const jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, 15)
-
-carritoCompras.push(elefanteDeManana)
-carritoCompras.push(galopandoColores)
-carritoCompras.push(tropicalFlamingo)
-carritoCompras.push(jungleOrange)
-
-// ---> Creando elementos en el html dinamicamente <--- //
-
-let showArtCards = document.getElementById('artContainerjs')
-
-carritoCompras.forEach((e) => {
-  let artContainer = document.createElement('div')
-  artContainer.setAttribute("class", "artContainer")
-
-    let artContainerText = document.createElement('div')
-    artContainer.appendChild(artContainerText)
-    artContainerText.setAttribute("class", "yellowBox")
-
-        let artTitle = document.createElement('h2')
-        artContainerText.appendChild(artTitle)
-        artTitle.textContent = e.title
-        
-
-        let artMaterial = document.createElement('h3')
-        artContainerText.appendChild(artMaterial)
-        artMaterial.textContent = e.material
-
-        let artDescription = document.createElement ('p')
-        artContainerText.appendChild(artDescription)
-        artDescription.textContent = e.description
-
-        let artContainerPrice = document.createElement('div')
-        artContainer.appendChild(artContainerPrice)
-        
-
-          let artPrice = document.createElement('p')
-          artContainerPrice.appendChild(artPrice)
-          artPrice.textContent = e.price
-          artPrice.setAttribute("class", "pricejs")
-
-          let btnArt = document.createElement('a')
-          artContainerPrice.appendChild(btnArt)
-          btnArt.textContent = 'Comprar'
-          btnArt.setAttribute("class", "btnBuyJs")
-      
-    let artContainerPhoto = document.createElement('div')
-    artContainer.appendChild(artContainerPhoto)
-
-          //Aquí no supe como hacer la iteración de las imágenes, me queda como duda de la entrega. 
-          showArtCards.innerHTML +=`
-          <img src="../images/art-elephant.jpg" alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
-          ` 
-      showArtCards.appendChild(artContainer)
-
-})
+const elefanteDeManana = new Producto(1, 'Elefante de Mañana', 650000, 50)
+const galopandoColores = new Producto(2, 'Galopando Colores', 700000, 10)
+const tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 750000, 30)
+const jungleOrange = new Producto(4, 'Jungle Orange', 800000, 15)
 
 
-/*
+let productos = [elefanteDeManana, galopandoColores, tropicalFlamingo, jungleOrange]
 
+console.log(carritoCompras)
+elefanteDeManana.addToCart(5)
+console.log(carritoCompras)
+galopandoColores.addToCart(3)
+console.log(carritoCompras)
+tropicalFlamingo.addToCart(10)
+console.log(carritoCompras)
+jungleOrange.addToCart(11)
+
+/* 
 
 ---->  ENTREGA DESAFIO INCORPORAR OBJETOS Y ARRAYS - Creación de objetos, función constructora <----
 
