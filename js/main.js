@@ -3,7 +3,7 @@
 let cartList = document.getElementById('cartList')
 let showArtCards = document.getElementById('artContainerjs')
 let products = []
-let shoppingcart = []
+let shoppingCart = []
 
 
 class Producto {
@@ -78,26 +78,42 @@ const onCart = (idOnclick) =>{
   const objectIdentified = products.find (e => e.id == idOnclick)
   console.log(objectIdentified);
 
-  shoppingcart.push(objectidentied)
+  if(JSON.parse(localStorage.getItem('shoppingCart')) != null){
+
+    let newObjects = JSON.parse(localStorage.getItem('shoppingCart'))
+
+    newObjects.push(objectIdentified)
+
+    localStorage.setItem('shoppingCart', JSON.stringify(newObjects))
+    location.reload()
+    
+  }else {
+    shoppingCart.push('objectIdentified')
+    localStorage.setItem('shoppingCart', JSON.stringify(newObjects))
+  }
 
 }
 
 const objetsOnCart = () =>{
+
+  let storagelist = JSON.parse(localStorage.getItem('shoppingCart'))
   
-  products.forEach (e => {
+  storagelist.forEach (e => {
   
-    cartList.innerHTML =`
+    cartList.innerHTML +=`
     <div>
-    <p>${e.title}</p>
-    <p>${e.material}</p>
+    <p>${e.title} || || </p>
+    <p>${e.material} || || </p>
     <p>${e.price}</p>
     </div>
     `
 
   })
 
+  objetsOnCart()
   
 }
+
 
 /*
 
