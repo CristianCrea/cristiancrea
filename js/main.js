@@ -105,7 +105,7 @@ const printShoppingCart = () =>{
     shoppingCartID.innerHTML +=`
     <div>
     <p>${e.title}</p>
-    <p>$ ${e.price}</p>
+    <p> <b>$ ${e.price}</b></p>
     </div>
     <br>
     `
