@@ -102,8 +102,8 @@ const imprimirCarrito = () =>{
   
     carritoID.innerHTML +=`
     <div>
-    <p>${e.title} || || </p>
-    <p>${e.material} || || </p>
+    <p>${e.title}</p>
+    <p>${e.material}</p>
     <p>${e.price}</p>
     </div>
     `
@@ -120,7 +120,7 @@ const imprimirCarrito = () =>{
 
     carritoDelStorage.forEach(e=> {
 
-        precioTotal = precioTotal + e.precio 
+        precioTotal = precioTotal + e.price
         console.log(precioTotal);
     })
 
