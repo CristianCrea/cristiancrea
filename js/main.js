@@ -1,7 +1,7 @@
 // PRIMERA ENTREGA, Construcción inicial del carrito de compras
 
 let carritoID = document.getElementById('cartList')
-let imprimir = document.getElementById('artContainerjs')
+let imprimir = document.getElementById('artContainers')
 let total = document.getElementById('totalPrice')
 
 let productos = []
@@ -103,9 +103,9 @@ const imprimirCarrito = () =>{
     carritoID.innerHTML +=`
     <div>
     <p>${e.title}</p>
-    <p>${e.material}</p>
     <p>${e.price}</p>
     </div>
+    <br>
     `
   })
 }

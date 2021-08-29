@@ -108,6 +108,45 @@ main{
     }
 }
 
+/*Cart Styles*/
+
+.cartContainer {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem 0;
+    font-size: 2rem;
+    
+
+    .cartContainer_title{
+      font-family: var(--font-Archivo);
+      background-color: var(--yellow-high);
+      padding: 2rem;
+      color: var(--grey-light);
+      margin-bottom: 2rem;
+    }
+}
+
+.cartContainer_total{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--purple-rocks);
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    p{
+      color: var(--beige-light);
+      font-size: 2.5rem;
+      font-family: var(--font-Archivo);
+    }
+
+
+}
+
+
 /*MEDIA QUERIES DIDACUS ART TABLET*/
 @media screen and (max-width: 768px){
   .artContainer{
@@ -136,6 +175,7 @@ main{
   }
 }
 
+
 /*MEDIA QUERIES DIDACUS ART MOBILE*/
 @media screen and (max-width: 500px){
   
@@ -150,45 +190,4 @@ main{
           }
   }
   }
-}
-
-//Styles for Js Elements 
-
-.yellowBox{
-  width: 30rem;
-  height: auto;
-  margin: 2rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--yellow-high);
-    h2{
-      font-size: 2rem;
-      color: var(--grey-light);
-      margin-bottom: 0.8rem;
-    }
-    h3{
-      font-size: 2rem;
-      font-weight: var(--size100);
-      margin-bottom: 0.8rem;
-    }
-    p{
-      font-size: 1.5rem;
-    }
-}
-
-
-
-.pricejs{ 
-    @include price(2.2rem);
-    margin-top: 7rem;
-}
-.btnBuyJs {
-  
-          @include buttonWhite(15rem); 
-          @include textbutton(2rem);
-          margin-top:1rem;
-}
-.btnBuyJs:hover {
-          @include hoverwhite;
 }

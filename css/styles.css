@@ -273,6 +273,32 @@ main {
       height: 33.3rem;
       align-self: center; }
 
+/*Cart Styles*/
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem 0;
+  font-size: 2rem; }
+  .cartContainer .cartContainer_title {
+    font-family: var(--font-Archivo);
+    background-color: var(--yellow-high);
+    padding: 2rem;
+    color: var(--grey-light);
+    margin-bottom: 2rem; }
+
+.cartContainer_total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--purple-rocks);
+  padding: 1rem;
+  margin-bottom: 1rem; }
+  .cartContainer_total p {
+    color: var(--beige-light);
+    font-size: 2.5rem;
+    font-family: var(--font-Archivo); }
+
 /*MEDIA QUERIES DIDACUS ART TABLET*/
 @media screen and (max-width: 768px) {
   .artContainer {
@@ -303,54 +329,6 @@ main {
       .artContainer .artContainer__photo img {
         width: 28rem;
         height: 18.6rem; } }
-
-.yellowBox {
-  width: 30rem;
-  height: auto;
-  margin: 2rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--yellow-high); }
-  .yellowBox h2 {
-    font-size: 2rem;
-    color: var(--grey-light);
-    margin-bottom: 0.8rem; }
-  .yellowBox h3 {
-    font-size: 2rem;
-    font-weight: var(--size100);
-    margin-bottom: 0.8rem; }
-  .yellowBox p {
-    font-size: 1.5rem; }
-
-.pricejs {
-  font-family: var(--font-Archivo);
-  font-size: 2.2rem;
-  color: var(--grey-light);
-  margin-bottom: 0.8rem;
-  margin-top: 7rem; }
-
-.btnBuyJs {
-  background-color: var(--beige-light);
-  border: 1px solid var(--grey-light);
-  color: var(--grey-light);
-  box-shadow: 3px 7px 15px -7px #6e6e6e;
-  width: 15rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--grey-light);
-  font-family: var(--font-Archivo);
-  font-size: 2rem;
-  letter-spacing: -1px;
-  margin-top: 1rem; }
-
-.btnBuyJs:hover {
-  background-color: var(--purple-rocks);
-  color: var(--beige-light);
-  border: none; }
 
 /*STYLES PROJECTS PAGES*/
 /*Buttons hovers*/
