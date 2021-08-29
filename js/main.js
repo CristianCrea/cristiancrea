@@ -49,7 +49,6 @@ products.push(galopandoColores)
 products.push(tropicalFlamingo)
 products.push(jungleOrange)
 
-console.log(products)
 // ---> Creando elementos en el html dinamicamente <--- //
 
 products.forEach((e) => {
@@ -65,7 +64,7 @@ products.forEach((e) => {
           <p>${e.description}</p>
           <div class="artContainer__price">
             <p class="price">${e.price} COP</p>
-            <a href="#" onclick="anadirshoppingCart(${e.id})" >COMPRAR</a>
+            <a href="#" onclick="addToShoppingCart(${e.id})" >COMPRAR</a>
           </div>
         </div>
         <div class="artContainer__photo">
@@ -76,29 +75,29 @@ products.forEach((e) => {
 
 })
 
-const anadirshoppingCart = (idPorOnclick) =>{
+const addToShoppingCart = (idOnClick) =>{
 
-  const objetoIdentificado = products.find (e => e.id == idPorOnclick)
-  console.log(objetoIdentificado);
+  const identifiedObject = products.find (e => e.id == idOnClick)
+  console.log(identifiedObject);
 
   if(JSON.parse(localStorage.getItem("shoppingCart")) != null){
         let shoppingCartNEW = JSON.parse(localStorage.getItem("shoppingCart"))
-        shoppingCartNEW.push(objetoIdentificado)
+        shoppingCartNEW.push(identifiedObject)
 
         localStorage.setItem("shoppingCart",JSON.stringify(shoppingCartNEW))
         location.reload()
     } else {
-        shoppingCart.push(objetoIdentificado)
+        shoppingCart.push(identifiedObject)
         localStorage.setItem("shoppingCart",JSON.stringify(shoppingCart))
     }
 
 }
 
-const imprimirshoppingCart = () =>{
+const printShoppingCart = () =>{
 
-  let shoppingCartDelStorage = JSON.parse(localStorage.getItem("shoppingCart"))
+  let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))
 
-  shoppingCartDelStorage.forEach(e =>  {
+  shoppingCartStorage.forEach(e =>  {
   
     shoppingCartID.innerHTML +=`
     <div>
@@ -110,24 +109,24 @@ const imprimirshoppingCart = () =>{
   })
 }
 
-  imprimirshoppingCart()
+  printShoppingCart()
 
-  const precioTotal = () => {
+  const totalPrice = () => {
 
-    let shoppingCartDelStorage = JSON.parse(localStorage.getItem("shoppingCart"))
+    let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))
 
-    let precioTotal = 0;
+    let totalPrice = 0;
 
-    shoppingCartDelStorage.forEach(e=> {
+    shoppingCartStorage.forEach(e=> {
 
-        precioTotal = precioTotal + e.price
-        console.log(precioTotal);
+        totalPrice = totalPrice + e.price
+        console.log(totalPrice);
     })
 
-    total.textContent = precioTotal
+    total.textContent = totalPrice
 }
 
-precioTotal()
+totalPrice()
 /*
 
 ---->  ENTREGA DESAFIO INCORPORAR OBJETOS Y ARRAYS - Creación de objetos, función constructora <----
