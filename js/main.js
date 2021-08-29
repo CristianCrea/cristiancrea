@@ -36,7 +36,7 @@ class Producto {
 const elefanteDeManana = new Producto(1, 'Elefante de Mañana', 'Oleo sobre lienzo', 'La fuerza, tranquilidad y la vibración color permearán tu espacio de la mejor forma', 650000, "../images/art-elephant.jpg",  50)
 const galopandoColores = new Producto(2, 'Galopando Colores', 'Oleo sobre lienzo', 'Si galopas conmigo, encontrarás paz, tranquilidad y shot de energia y vitalidad que transmite mi ser.', 700000, "../images/art-horse.jpg", 10)
 const tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 'Oleo sobre lienzo', 'La tranquilidad y el garbo plasmados en un solo lugar. Déjate conquistar por la elegancia de esta pieza.', 750000, "../images/art-flamenco.jpg", 30)
-const jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "/art-flamenco.jpg", 15)
+const jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "../images/art-flamenco.jpg", 15)
 
 carritoCompras.push(elefanteDeManana)
 carritoCompras.push(galopandoColores)
@@ -84,82 +84,19 @@ carritoCompras.forEach((e) => {
       
     let artContainerPhoto = document.createElement('div')
     artContainer.appendChild(artContainerPhoto)
+    artContainerPhoto.textContent = e.imgUrl
 
-          //Aquí no supe como hacer la iteración de las imágenes, me queda como duda de la entrega. 
-          showArtCards.innerHTML +=`
-          <img src="../images/art-elephant.jpg" alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
-          ` 
+    showArtCards.innerHTML +=`
+    <div class="artContainer__photo">
+      <img src={e.imgUrl} alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
+    </div>
+    ` 
       showArtCards.appendChild(artContainer)
 
 })
 
 
 /*
-
-Hola Cristian, buena semana para vos también! La estrega está muy bien, faltan ver un par de cuestiones y es lógico, pero no te preocupes! Vamos a ir sacando esas dudas.
-
-
-
-En cuanto a tus dudas:
-
-
-
-Cuando se trata del manejo de un elemento mediante JS, es necesario explicitar específicamente la class, el tipo de etiqueta o el id del elemento que queres interactuar. Por el momento lamentablemento no se puede manejar como en SASS! Asi que si, está perfecto lo que hiciste.
-
-
-
-Con el innerHTML, te da la oportunidad de escribir textualmente lo que necesitas que se imprima en el HTML, por lo que podes agregarle los atributos que quieras al elemento que querés agregar, podes agregarle una clase tal cual escribieras en HTML:
-
-   showArtCards.innerHTML +=`
-        <div class="artContainer__photo">
-            <img src="../images/art-elephant.jpg" alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
-        </div>
-          ` 
-Nota que agregué el div que contiene a las imágenes, junto con su atributo class, tal cual lo tenes en tus cards del HTML.
-
-
-
-Con respecto a tu duda de cómo iterar las imágenes dinámicamente, lo ideal es que dentro de tu constructor de Producto, tengas una propiedad que sea "imgURL" por ejemplo (puede ser el nombre que quieras), donde puedas incluir el URL de las imágenes de cada producto. 
-
-Al momento de crear el producto (en el new), lo agregas como si lo hicieras con los otras propiedades, en forma de string. Sería por ejemplo: "../images/art-elephant.jpg".
-
-const elefanteDeManana = new Producto(1, 'Elefante de Mañana', ... , 50, "../images/art-elephant.jpg")
-Nota que agregué al último la URL de la imagen correspondiente al producto que estoy creando.
-
-
-
-Esto te va a permitir utilizarlas luego dentro del forEach, de la misma forma que lo haces con la otras propiedades (e.title, e.material,... e.imgURL). Por ejemplo siguiendo el ejemplo del innerHTML, quedaría algo así:
-
-   showArtCards.innerHTML +=`
-        <div class="artContainer__photo">
-            <img src={e.imgURL} alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
-        </div>
-          ` 
-
-
-Algo que me gustaría agregar, es que las clases o id nuevas (creadas para manejar el DOM con JS) no es necesario utilizarlas para cambiar los estilos. Tus estilos (CSS o SCSS) serán validos siempre que los elementos nuevos conserven la misma estructura que los elementos que tenías en un principio (los estáticos). Así que por ese lado no es necesario cambiar el estilo, o la estructura! (Nota: No pasa nada si quedan clases definidas en el HTML sin un estilo asignado).
-
-
-
-Y con respecto a tu tercer duda, lo que se busca es brindar ejemplos (como el que hizo el profe la ultima clase) para que puedan darse cuenta de cómo se pueden integrar las herramientas para generar lo que necesitan, un carrito por ejemplo en tu caso. Yo creo que con las herramientas que vimos hasta ahora se puede hacer, pero lógicamente hay muchas formas de hacerlo con otras herramientas diferentes!
-
-
-
-Lo que te recomiendo personalmente (y profesionalmente), es que veas videos o ejemplos si lo crees necesario. Como desarrolladores es sumamente necesario (y suma mucho) si logramos ver muchos puntos de vista, e ir viendo videos o tutoriales y entendiendo lo que se va haciendo. Yo lo considero muy enriquecedor, así que por mi lado yo te recomendaría que investigues lo que sea necesario, que re-veas las clases la cantidad de veces que consideres necesario, que veas páginas o documentaciones oficiales.
-
-
-
-En conjunto todo esto es lo que te va a hacer un gran desarrollador! Espero que te haya servido la devolución.
-
-
-
-Si consideras que necesitas más profundización sobre cómo empezar o cómo seguir, no dudes en escribirme por Slack! 
-
-Muy buen Trabajo, la verdad.
-
-Ahora la práctica te va a seguir guiando! Saludos.
-
-
 
 ---->  ENTREGA DESAFIO INCORPORAR OBJETOS Y ARRAYS - Creación de objetos, función constructora <----
 
