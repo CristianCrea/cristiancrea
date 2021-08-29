@@ -7,7 +7,6 @@ let total = document.getElementById('totalPrice')
 let products = []
 let shoppingCart = []
 
-
 class Producto {
     constructor(id, title, material, description, price, imgUrl, stock) {
         this.id = id
@@ -22,20 +21,20 @@ class Producto {
         return this.stock
     }
 
-    getTotal (cantidad) {
-        return this.price * cantidad
+    getTotal (quantity) {
+        return this.price * quantity
     }
 
-    getCompra (cantidad) {
+    getPurchase (quantity) {
         return {
             product: this,
-            quantity: cantidad,
-            monto: this.getTotal(cantidad)
+            quantity: quantity,
+            monto: this.getTotal(quantity)
         }
     }
 
-    addToCart (cantidad) {
-        products.push(this.getCompra(cantidad))
+    addToCart (quantity) {
+        products.push(this.getPurchase(quantity))
     }
 }
 
@@ -75,6 +74,8 @@ products.forEach((e) => {
 
 })
 
+//Función para añadir al carrito 
+
 const addToShoppingCart = (idOnClick) =>{
 
   const identifiedObject = products.find (e => e.id == idOnClick)
@@ -86,12 +87,14 @@ const addToShoppingCart = (idOnClick) =>{
 
         localStorage.setItem("shoppingCart",JSON.stringify(shoppingCartNEW))
         location.reload()
-    } else {
+  } else {
         shoppingCart.push(identifiedObject)
         localStorage.setItem("shoppingCart",JSON.stringify(shoppingCart))
-    }
+  }
 
 }
+
+//Función para imprimir el resultado
 
 const printShoppingCart = () =>{
 
@@ -111,14 +114,14 @@ const printShoppingCart = () =>{
 
   printShoppingCart()
 
+  //Función para totalizar el precio 
+
   const totalPrice = () => {
 
     let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))
-
     let totalPrice = 0;
 
     shoppingCartStorage.forEach(e=> {
-
         totalPrice = totalPrice + e.price
         console.log(totalPrice);
     })
