@@ -1,6 +1,10 @@
 // PRIMERA ENTREGA, Construcción inicial del carrito de compras
 
-let carritoCompras = []
+let cartList = document.getElementById('cartList')
+let showArtCards = document.getElementById('artContainerjs')
+let products = []
+let shoppingcart = []
+
 
 class Producto {
     constructor(id, title, material, description, price, imgUrl, stock) {
@@ -29,72 +33,71 @@ class Producto {
     }
 
     addToCart (cantidad) {
-        carritoCompras.push(this.getCompra(cantidad))
+        products.push(this.getCompra(cantidad))
     }
 }
 
 const elefanteDeManana = new Producto(1, 'Elefante de Mañana', 'Oleo sobre lienzo', 'La fuerza, tranquilidad y la vibración color permearán tu espacio de la mejor forma', 650000, "../images/art-elephant.jpg",  50)
 const galopandoColores = new Producto(2, 'Galopando Colores', 'Oleo sobre lienzo', 'Si galopas conmigo, encontrarás paz, tranquilidad y shot de energia y vitalidad que transmite mi ser.', 700000, "../images/art-horse.jpg", 10)
 const tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 'Oleo sobre lienzo', 'La tranquilidad y el garbo plasmados en un solo lugar. Déjate conquistar por la elegancia de esta pieza.', 750000, "../images/art-flamenco.jpg", 30)
-const jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "../images/art-flamenco.jpg", 15)
+const jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "../images/art-orange.jpg", 15)
 
-carritoCompras.push(elefanteDeManana)
-carritoCompras.push(galopandoColores)
-carritoCompras.push(tropicalFlamingo)
-carritoCompras.push(jungleOrange)
+products.push(elefanteDeManana)
+products.push(galopandoColores)
+products.push(tropicalFlamingo)
+products.push(jungleOrange)
 
 // ---> Creando elementos en el html dinamicamente <--- //
 
-let showArtCards = document.getElementById('artContainerjs')
+products.forEach((e) => {
+  
+  showArtCards.innerHTML +=`
 
-carritoCompras.forEach((e) => {
-  let artContainer = document.createElement('div')
-  artContainer.setAttribute("class", "artContainer")
-
-    let artContainerText = document.createElement('div')
-    artContainer.appendChild(artContainerText)
-    artContainerText.setAttribute("class", "yellowBox")
-
-        let artTitle = document.createElement('h2')
-        artContainerText.appendChild(artTitle)
-        artTitle.textContent = e.title
-        
-
-        let artMaterial = document.createElement('h3')
-        artContainerText.appendChild(artMaterial)
-        artMaterial.textContent = e.material
-
-        let artDescription = document.createElement ('p')
-        artContainerText.appendChild(artDescription)
-        artDescription.textContent = e.description
-
-        let artContainerPrice = document.createElement('div')
-        artContainer.appendChild(artContainerPrice)
-        
-
-          let artPrice = document.createElement('p')
-          artContainerPrice.appendChild(artPrice)
-          artPrice.textContent = e.price
-          artPrice.setAttribute("class", "pricejs")
-
-          let btnArt = document.createElement('a')
-          artContainerPrice.appendChild(btnArt)
-          btnArt.textContent = 'Comprar'
-          btnArt.setAttribute("class", "btnBuyJs")
-      
-    let artContainerPhoto = document.createElement('div')
-    artContainer.appendChild(artContainerPhoto)
-    artContainerPhoto.textContent = e.imgUrl
-
-    showArtCards.innerHTML +=`
-    <div class="artContainer__photo">
-      <img src={e.imgUrl} alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
-    </div>
-    ` 
-      showArtCards.appendChild(artContainer)
+  <div class="artContainer">
+        <div class="artContainer_text">
+          <div>
+            <h2>${e.title}</h2>
+            <h3>${e.material}</h3>
+          </div>
+          <p>${e.description}</p>
+          <div class="artContainer__price">
+            <p class="price">${e.price} COP</p>
+            <a href="#" onclick="onCart(${e.id})" >COMPRAR</a>
+          </div>
+        </div>
+        <div class="artContainer__photo">
+            <img src=${e.imgUrl}  alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
+        </div>
+  </div>
+  `
 
 })
 
+const onCart = (idOnclick) =>{
+
+  const objectIdentified = products.find (e => e.id == idOnclick)
+  console.log(objectIdentified);
+
+  shoppingcart.push(objectidentied)
+
+}
+
+const objetsOnCart = () =>{
+  
+  products.forEach (e => {
+  
+    cartList.innerHTML =`
+    <div>
+    <p>${e.title}</p>
+    <p>${e.material}</p>
+    <p>${e.price}</p>
+    </div>
+    `
+
+  })
+
+  
+}
 
 /*
 
