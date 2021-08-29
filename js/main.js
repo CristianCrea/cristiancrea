@@ -1,9 +1,11 @@
 // PRIMERA ENTREGA, Construcción inicial del carrito de compras
 
-let cartList = document.getElementById('cartList')
-let showArtCards = document.getElementById('artContainerjs')
-let products = []
-let shoppingCart = []
+let carritoID = document.getElementById('cartList')
+let imprimir = document.getElementById('artContainerjs')
+let total = document.getElementById('totalPrice')
+
+let productos = []
+let carrito = []
 
 
 class Producto {
@@ -33,25 +35,26 @@ class Producto {
     }
 
     addToCart (cantidad) {
-        products.push(this.getCompra(cantidad))
+        productos.push(this.getCompra(cantidad))
     }
 }
 
-const elefanteDeManana = new Producto(1, 'Elefante de Mañana', 'Oleo sobre lienzo', 'La fuerza, tranquilidad y la vibración color permearán tu espacio de la mejor forma', 650000, "../images/art-elephant.jpg",  50)
-const galopandoColores = new Producto(2, 'Galopando Colores', 'Oleo sobre lienzo', 'Si galopas conmigo, encontrarás paz, tranquilidad y shot de energia y vitalidad que transmite mi ser.', 700000, "../images/art-horse.jpg", 10)
-const tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 'Oleo sobre lienzo', 'La tranquilidad y el garbo plasmados en un solo lugar. Déjate conquistar por la elegancia de esta pieza.', 750000, "../images/art-flamenco.jpg", 30)
-const jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "../images/art-orange.jpg", 15)
+let elefanteDeManana = new Producto(1, 'Elefante de Mañana', 'Oleo sobre lienzo', 'La fuerza, tranquilidad y la vibración color permearán tu espacio de la mejor forma', 650000, "../images/art-elephant.jpg",  50)
+let galopandoColores = new Producto(2, 'Galopando Colores', 'Oleo sobre lienzo', 'Si galopas conmigo, encontrarás paz, tranquilidad y shot de energia y vitalidad que transmite mi ser.', 700000, "../images/art-horse.jpg", 10)
+let tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 'Oleo sobre lienzo', 'La tranquilidad y el garbo plasmados en un solo lugar. Déjate conquistar por la elegancia de esta pieza.', 750000, "../images/art-flamenco.jpg", 30)
+let jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "../images/art-orange.jpg", 15)
 
-products.push(elefanteDeManana)
-products.push(galopandoColores)
-products.push(tropicalFlamingo)
-products.push(jungleOrange)
+productos.push(elefanteDeManana)
+productos.push(galopandoColores)
+productos.push(tropicalFlamingo)
+productos.push(jungleOrange)
 
+console.log(productos)
 // ---> Creando elementos en el html dinamicamente <--- //
 
-products.forEach((e) => {
+productos.forEach((e) => {
   
-  showArtCards.innerHTML +=`
+  imprimir.innerHTML +=`
 
   <div class="artContainer">
         <div class="artContainer_text">
@@ -62,7 +65,7 @@ products.forEach((e) => {
           <p>${e.description}</p>
           <div class="artContainer__price">
             <p class="price">${e.price} COP</p>
-            <a href="#" onclick="onCart(${e.id})" >COMPRAR</a>
+            <a href="#" onclick="anadirCarrito(${e.id})" >COMPRAR</a>
           </div>
         </div>
         <div class="artContainer__photo">
@@ -73,48 +76,58 @@ products.forEach((e) => {
 
 })
 
-const onCart = (idOnclick) =>{
+const anadirCarrito = (idPorOnclick) =>{
 
-  const objectIdentified = products.find (e => e.id == idOnclick)
-  console.log(objectIdentified);
+  const objetoIdentificado = productos.find (e => e.id == idPorOnclick)
+  console.log(objetoIdentificado);
 
-  if(JSON.parse(localStorage.getItem('shoppingCart')) != null){
+  if(JSON.parse(localStorage.getItem("carrito")) != null){
+        let carritoNEW = JSON.parse(localStorage.getItem("carrito"))
+        carritoNEW.push(objetoIdentificado)
 
-    let newObjects = JSON.parse(localStorage.getItem('shoppingCart'))
-
-    newObjects.push(objectIdentified)
-
-    localStorage.setItem('shoppingCart', JSON.stringify(newObjects))
-    location.reload()
-    
-  }else {
-    shoppingCart.push('objectIdentified')
-    localStorage.setItem('shoppingCart', JSON.stringify(newObjects))
-  }
+        localStorage.setItem("carrito",JSON.stringify(carritoNEW))
+        location.reload()
+    } else {
+        carrito.push(objetoIdentificado)
+        localStorage.setItem("carrito",JSON.stringify(carrito))
+    }
 
 }
 
-const objetsOnCart = () =>{
+const imprimirCarrito = () =>{
 
-  let storagelist = JSON.parse(localStorage.getItem('shoppingCart'))
+  let carritoDelStorage = JSON.parse(localStorage.getItem("carrito"))
+
+  carritoDelStorage.forEach(e =>  {
   
-  storagelist.forEach (e => {
-  
-    cartList.innerHTML +=`
+    carritoID.innerHTML +=`
     <div>
     <p>${e.title} || || </p>
     <p>${e.material} || || </p>
     <p>${e.price}</p>
     </div>
     `
-
   })
-
-  objetsOnCart()
-  
 }
 
+  imprimirCarrito()
 
+  const precioTotal = () => {
+
+    let carritoDelStorage = JSON.parse(localStorage.getItem("carrito"))
+
+    let precioTotal = 0;
+
+    carritoDelStorage.forEach(e=> {
+
+        precioTotal = precioTotal + e.precio 
+        console.log(precioTotal);
+    })
+
+    total.textContent = precioTotal
+}
+
+precioTotal()
 /*
 
 ---->  ENTREGA DESAFIO INCORPORAR OBJETOS Y ARRAYS - Creación de objetos, función constructora <----
