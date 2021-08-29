@@ -1,11 +1,11 @@
-// PRIMERA ENTREGA, Construcción inicial del carrito de compras
+// PRIMERA ENTREGA, Construcción inicial del shoppingCart de compras
 
-let carritoID = document.getElementById('cartList')
-let imprimir = document.getElementById('artContainers')
+let shoppingCartID = document.getElementById('cartList')
+let printCart = document.getElementById('artContainers')
 let total = document.getElementById('totalPrice')
 
-let productos = []
-let carrito = []
+let products = []
+let shoppingCart = []
 
 
 class Producto {
@@ -35,7 +35,7 @@ class Producto {
     }
 
     addToCart (cantidad) {
-        productos.push(this.getCompra(cantidad))
+        products.push(this.getCompra(cantidad))
     }
 }
 
@@ -44,17 +44,17 @@ let galopandoColores = new Producto(2, 'Galopando Colores', 'Oleo sobre lienzo',
 let tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 'Oleo sobre lienzo', 'La tranquilidad y el garbo plasmados en un solo lugar. Déjate conquistar por la elegancia de esta pieza.', 750000, "../images/art-flamenco.jpg", 30)
 let jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "../images/art-orange.jpg", 15)
 
-productos.push(elefanteDeManana)
-productos.push(galopandoColores)
-productos.push(tropicalFlamingo)
-productos.push(jungleOrange)
+products.push(elefanteDeManana)
+products.push(galopandoColores)
+products.push(tropicalFlamingo)
+products.push(jungleOrange)
 
-console.log(productos)
+console.log(products)
 // ---> Creando elementos en el html dinamicamente <--- //
 
-productos.forEach((e) => {
+products.forEach((e) => {
   
-  imprimir.innerHTML +=`
+  printCart.innerHTML +=`
 
   <div class="artContainer">
         <div class="artContainer_text">
@@ -65,7 +65,7 @@ productos.forEach((e) => {
           <p>${e.description}</p>
           <div class="artContainer__price">
             <p class="price">${e.price} COP</p>
-            <a href="#" onclick="anadirCarrito(${e.id})" >COMPRAR</a>
+            <a href="#" onclick="anadirshoppingCart(${e.id})" >COMPRAR</a>
           </div>
         </div>
         <div class="artContainer__photo">
@@ -76,49 +76,49 @@ productos.forEach((e) => {
 
 })
 
-const anadirCarrito = (idPorOnclick) =>{
+const anadirshoppingCart = (idPorOnclick) =>{
 
-  const objetoIdentificado = productos.find (e => e.id == idPorOnclick)
+  const objetoIdentificado = products.find (e => e.id == idPorOnclick)
   console.log(objetoIdentificado);
 
-  if(JSON.parse(localStorage.getItem("carrito")) != null){
-        let carritoNEW = JSON.parse(localStorage.getItem("carrito"))
-        carritoNEW.push(objetoIdentificado)
+  if(JSON.parse(localStorage.getItem("shoppingCart")) != null){
+        let shoppingCartNEW = JSON.parse(localStorage.getItem("shoppingCart"))
+        shoppingCartNEW.push(objetoIdentificado)
 
-        localStorage.setItem("carrito",JSON.stringify(carritoNEW))
+        localStorage.setItem("shoppingCart",JSON.stringify(shoppingCartNEW))
         location.reload()
     } else {
-        carrito.push(objetoIdentificado)
-        localStorage.setItem("carrito",JSON.stringify(carrito))
+        shoppingCart.push(objetoIdentificado)
+        localStorage.setItem("shoppingCart",JSON.stringify(shoppingCart))
     }
 
 }
 
-const imprimirCarrito = () =>{
+const imprimirshoppingCart = () =>{
 
-  let carritoDelStorage = JSON.parse(localStorage.getItem("carrito"))
+  let shoppingCartDelStorage = JSON.parse(localStorage.getItem("shoppingCart"))
 
-  carritoDelStorage.forEach(e =>  {
+  shoppingCartDelStorage.forEach(e =>  {
   
-    carritoID.innerHTML +=`
+    shoppingCartID.innerHTML +=`
     <div>
     <p>${e.title}</p>
-    <p>${e.price}</p>
+    <p>$ ${e.price}</p>
     </div>
     <br>
     `
   })
 }
 
-  imprimirCarrito()
+  imprimirshoppingCart()
 
   const precioTotal = () => {
 
-    let carritoDelStorage = JSON.parse(localStorage.getItem("carrito"))
+    let shoppingCartDelStorage = JSON.parse(localStorage.getItem("shoppingCart"))
 
     let precioTotal = 0;
 
-    carritoDelStorage.forEach(e=> {
+    shoppingCartDelStorage.forEach(e=> {
 
         precioTotal = precioTotal + e.price
         console.log(precioTotal);
