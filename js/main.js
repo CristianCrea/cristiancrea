@@ -63,11 +63,12 @@ products.forEach((e) => {
           <p>${e.description}</p>
           <div class="artContainer__price">
             <p class="price">${e.price} COP</p>
-            <a href="#" onclick="addToShoppingCart(${e.id})" >COMPRAR</a>
+            <a id="buyButton" onclick="addToShoppingCart(${e.id})" >COMPRAR</a>
+            <p id="callToAction">¡Solo quedan pocas unidades!</p>
           </div>
         </div>
         <div class="artContainer__photo">
-            <img src=${e.imgUrl}  alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
+            <img id="artImage" src=${e.imgUrl}  alt="Cuadro de peces formando un circulo cromático pintado en oleo sobre lienzo">
         </div>
   </div>
   `
@@ -105,7 +106,7 @@ const printShoppingCart = () =>{
     shoppingCartID.innerHTML +=`
     <div>
     <p>${e.title}</p>
-    <p> <b>$ ${e.price}</b></p>
+    <p> <b>$ ${e.price}</b$></p>
     </div>
     <br>
     `
