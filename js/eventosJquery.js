@@ -1,5 +1,7 @@
 //Eventos de mouse para 
 
+/*
+
 $(function(){
   
 
@@ -13,3 +15,5 @@ $(function(){
   })
 
 })
+
+*/
