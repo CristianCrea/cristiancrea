@@ -2,7 +2,10 @@
 
 let shoppingCartID = document.getElementById('cartList') //Llamamos al elemento donde queremos que se imprima el producto al que yo le de click
 let printCart = document.getElementById('artContainers') //Llamamos al div donde queremos que se impriman las cards dinamicamente
-let total = document.getElementById('totalPrice') //Llamos al elemento donde se va imprimir lo que compremos
+let total = document.getElementById('totalPrice') //Llamamos al elemento donde se va imprimir lo que compremos
+let shoppingList = document.getElementById('cartList')//Llamamos el sitio donde se va imprimir la lista de compras
+let btnCleanCart = document.getElementById("cleanCart")//Creamos el botón
+
 
 let products = []
 let shoppingCart = []
@@ -68,8 +71,8 @@ products.forEach((e) => {
           <p>${e.description}</p>
           <div class="artContainer__price">
             <p class="price">${e.price} COP</p>
-            <a id="buyButton" onclick="addToShoppingCart(${e.id})">COMPRAR</a>
-            <p id="callToAction">¡Solo quedan pocas unidades!</p>
+            <a class="buyButton" onclick="addToShoppingCart(${e.id})">COMPRAR</a>
+            <p class="callToAction">Lleva un regalo adicional por tu compra</p>
           </div>
         </div>
         <div class="artContainer__photo">
@@ -78,6 +81,8 @@ products.forEach((e) => {
   </div>
   `
 })
+
+// >>> FUNCTIONS <<< // 
 
 //Ahora creamos la función para añadir los elementos al carrito  al tomar el elemento
 // que toque y lo pushee, para eso creamos otro array para que se alojen ahí (shoppingCart)
@@ -98,6 +103,7 @@ const addToShoppingCart = (idOnClick) =>{  //iOnClick se refiere al producto al 
 
         shoppingCart.push(identifiedObject) //Cuando no tengo ningun producto me hace esto
         localStorage.setItem("shoppingCart",JSON.stringify(shoppingCart)) //Cada vez que apretamos un botón lo agregamos al localStorage (setItem) Convertimos el dato a JSON con .stringify
+        location.reload()
   }
 
 }
@@ -115,14 +121,29 @@ const printShoppingCart = () =>{
 
   shoppingCartStorage.forEach(e =>  { //Hago un forEach para que por cada producto (iteración) que tenga mi array imprima lo que yo le pida
   
-    shoppingCartID.innerHTML +=`
-    <div>
-    <p>${e.title}</p>
-    <p> <b>$ ${e.price}</b$></p>
-    </div>
-    <br>
-    `
+    let shopListContainer = document.createElement('div')
+    shopListContainer.setAttribute("class", "shoopingList")
+
+      let listTitle = document.createElement('p')
+      shopListContainer.appendChild(listTitle)
+      listTitle.textContent = e.title
+
+      let productPrice = document.createElement('p')
+      shopListContainer.appendChild(productPrice)
+      productPrice.setAttribute("class", "shoopingList_price")
+      productPrice.textContent = e.price
+
+      let btnDeleteProduct = document.createElement("button")//Creamos el botón
+      shopListContainer.appendChild(btnDeleteProduct)
+      btnDeleteProduct.setAttribute("class", "deleteProduct") //Le damos la clase que queramos          
+      btnDeleteProduct.setAttribute("id", `${e.id}`)
+      btnDeleteProduct.setAttribute("onclick", `deletePurchase(${e.id})`) //Le seteo la función de delete user con un evento "onclick"
+      btnDeleteProduct.textContent = "Quitar" //Le creo el contenido
+    
+    shoppingList.appendChild(shopListContainer)  
+
   })
+
 }
 printShoppingCart() //Ejecuto la función de imprimir si no no funcionaría y no saldría lo que yo ponga en el carrito
 
@@ -130,7 +151,6 @@ printShoppingCart() //Ejecuto la función de imprimir si no no funcionaría y no
 
 const totalPrice = () => {
     
-  
     // Primero debemos saber todos los precios y eso lo hacemos trayendolos del localStorage (getItem)
     let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))
     let totalPrice = 0; //Inicializamos en cero el precio para comenzar 
@@ -138,98 +158,30 @@ const totalPrice = () => {
     //Hago un for each que me itere por todos los objetos que estén en el carrito del localStorage
     shoppingCartStorage.forEach(e=> {
         totalPrice = totalPrice + e.price // totalPrice es igual totalPrice(Que está en cero) + precio del elemento
-    
     })
     total.textContent = totalPrice //Imprimirmos lo de la función totalPrice en el total en el elemento creado en html
 }
 totalPrice() //Ejecutamos la función sino no funciona 
 
-/*
 
----->  ENTREGA DESAFIO INCORPORAR OBJETOS Y ARRAYS - Creación de objetos, función constructora <----
+const deletePurchase = (id) => { //Le pasamos por parameto 
 
-function obraDeArte (nombre, sustrato, tamaño, precio) {
-  this.nombre = nombre;
-  this.sustrato = sustrato;
-  this.tamaño = tamaño;
-  this.precio = precio
+    //Tomo toda la info que tengo
+    let allProducts = JSON.parse(localStorage.getItem("shoppingCart")) //Primero tomamos todos mis usuarios del local
+    //Me fijo que usuario tiene ese ID 
+    let allProductsUpdated = allProducts.filter(e => e.id != id) //Creo una variable de todos los usuarios actualizados y con un filter todos los usuarios distintos al usuario que recibe por parametro
+    // Tomo toda la info de esos usuarios que no tienen ese id que pase por parametro y lo vuelvo a guardar en el local.
+    localStorage.setItem("shoppingCart", JSON.stringify(allProductsUpdated)) //Setee en el local storage mi 
+    location.reload()//Recargo la página para que me deje la lista sin el usuario que le acabé de borrar
+
 }
 
-let elefanteDeManana = new obraDeArte('Elefante de Mañana', 'Oleo sobre lienzo', '100 x 70cms', '650.000');
-let galopandoColores = new obraDeArte('Galopando Colores', 'Oleo sobre lienzo', '120 x 80cms', '700.000');
-let tropicalFlamingo = new obraDeArte('Tropical flamingo', 'Oleo sobre lienzo', '150 x 210cms', '750.000');
-let jungleorange = new obraDeArte('Jungle orange', 'Oleo sobre lienzo', '80 x 50cms', '800.000');
+// >>> EVENTS <<< // 
 
-console.log(elefanteDeManana);
-console.log(galopandoColores);
-console.log(tropicalFlamingo);
-console.log(JungleOrange);
 
----> ENTREGA DESAFIO INCORPORAR OBJETOS Y ARRAYS - Array con los objetos del los cuadros y un filter de precio. <--- 
-
-let didacusCuadros = [
-  {nombre:'Elefante de Mañana', sustrato:'Oleo sobre lienzo', medida:'100 x 70cms', precio:'650000'},
-  {nombre:'Galopando Colores', sustrato:'Oleo sobre lienzo', medida: '120 x 80cms', precio:'700000'},
-  {nombre:'Tropical flamingo', sustrato:'Oleo sobre lienzo', medida:'150 x 210cms', precio:'750000'},
-  {nombre:'Jungle orange', sustrato:'Oleo sobre lienzo', medida:'80 x 50cms', precio:'800000'},
-]
-
-let filtroPrecio = didacusCuadros.filter(function(articulo){
-  return articulo.precio <= 700000
+btnCleanCart.addEventListener("click", () =>{
+  localStorage.clear(),
+  location.reload()
 })
 
-console.log(filtroPrecio)
 
-*/
-
-
-//Desafio entregable clase 3 y 4 Simulador de precio + impuesto de un producto 
-
-/* 
-
-function masIva(precio, iva){
-      var coniva = (precio + precio*iva/100);
-      return coniva;
-    }
-    var precio = Number(prompt('Introduce el precio de la obra de arte para calcular su iva y precio final. Las opciones son 650000, 700000, 750000, 800000'));
-    var iva = Number(prompt('Introduce el iva del 19% ingresando el numero "19"'));
-  
-    if(iva > 0){
-      var resultado = masIva(precio, iva);
-    }
-    alert(`El Precio de tu producto sin iva es: ${precio} y el precio más Iva es de: ${resultado}`);
-
-
-
-Ejercicio While para elección de producto
-
-let nombre = prompt("Para comenzar con la experiencia de compra ingresa tu nombre");
-let msg;
-let medida;
-
-while (msg != "ver cuadros") {
-  msg = prompt("Ingresa la palabra de tu referencia favorita, elefante, caballo, flamingo, toronja o ver cuadros para salir");
-  switch (msg) {
-    case "elefante":
-      alert("Hola " + nombre + " " + "en tu espacio queda bien un Elefante de Mañana en Oleo sobre lienzo, 100 x 70cms por 650.000, escribe ver cuadros para verlo");
-      break;
-
-    case "cabello":
-      alert("Hola " + nombre + " " + "en tu espacio queda bien un Galopando Colores en Oleo sobre lienzo, 120 x 80cms por 700.000, escribe ver cuadros para verlo");
-      break;
-
-    case "flamingo":
-      alert("Hola " + nombre + " " + "en tu espacio queda bien un Tropical flamingo en Oleo sobre lienzo, 150 x 210cms por 750.000, escribe ver cuadros para verlo");
-      break;
-
-    case "toronja":
-      alert("Hola " + nombre + " " + "en tu espacio queda bien un Jungle orange en Oleo sobre lienzo, 80 x 50cms por 800.000, escribe ver cuadros para verlo");
-      break;
-
-    default:
-      alert("Bienvenido a Didacus Shop");
-      break;
-  }
-}
-
-*/

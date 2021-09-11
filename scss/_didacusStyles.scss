@@ -89,14 +89,16 @@ main{
         a {
           @include buttonWhite(15rem); 
           @include textbutton(2rem);
+          cursor: pointer
         }
         a:hover {
           @include hoverwhite;
         }
         
-        #callToAction{
+        .callToAction{
           font-size: 1.2rem;
           margin-top: 1.5rem;
+          color: var(--purple-rocks);
         }
     }
     .artContainer__photo{
@@ -109,17 +111,15 @@ main{
           width: 50rem;
           height: 33.3rem;
           align-self: center;
+          box-shadow: 0px 10px 13px -7px #000000, 5px 7px 36px 2px rgba(165,165,165,0);
         }
     }
 }
 
-.imageEfect{
-      box-shadow: 0px 10px 13px -7px #000000, 5px 7px 36px 2px rgba(165,165,165,0);
-      border: solid 3px var(--purple-rocks);
-}
 
 
-/*Cart Styles*/
+
+/*Cart list Styles*/
 
 .cartContainer {
 
@@ -128,15 +128,55 @@ main{
     align-items: center;
     padding: 2rem 2rem 0;
     font-size: 2rem;
-    
 
+    .cartContainer_buyTitle{
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      #cleanCart{
+        @include buttonWhite(15rem); 
+        @include textbutton(1.5rem);
+        cursor: pointer;
+        margin-left: 2rem;
+      }
+      #cleanCart:hover {
+          @include hoverwhite;
+      }
+    }
+    
     .cartContainer_title{
       font-family: var(--font-Archivo);
       background-color: var(--yellow-high);
       padding: 2rem;
       color: var(--grey-light);
-      margin-bottom: 2rem;
     }
+
+}
+
+/* Styles shopping list*/
+
+.shoopingList{
+  display: flex;
+  width: 40rem;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .shoopingList_price{
+    font-weight: bold;
+    color: var(--grey-light)
+  }
+
+}
+
+.deleteProduct{
+  @include buttonWhite(8rem); 
+  @include textbutton(1.5rem);
+  cursor: pointer;
+}
+.deleteProduct:hover {
+  @include hoverwhite;
 }
 
 .cartContainer_total{

@@ -46,12 +46,16 @@
       <!-- CART -->
       
       <div class="cartContainer">
-        <p class="cartContainer_title">Tus compras en Didacus Art Shop</p>
+        <div class="cartContainer_buyTitle">
+          <p class="cartContainer_title">Tus compras en Didacus Art Shop</p>
+          <button id="cleanCart" >Vaciar carrito</button>
+        </div>
         <div id="cartList"></div>
+        
       </div>
 
       <div class="cartContainer_total" >
-        <p>Total</p>
+        <p>Total de la compra</p>
         <p id="totalPrice"></p>
       </div>
       
@@ -61,13 +65,17 @@
       <p>Desarrollado por Cristian Mojica - 2021</p>
     </footer>
 
+
+    
     <script
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous">
     </script>
     
-    <script src="../js/main.js"></script>
+    <script src="../js/shoppingCart.js"></script>
     <script src="../js/eventosJquery.js"></script>
   </body>
 </html>
+
+

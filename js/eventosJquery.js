@@ -1,19 +1,17 @@
 //Eventos de mouse para 
 
-/*
 
 $(function(){
   
 
-  $('#buyButton').mouseleave(function(){
-    $('#callToAction').fadeOut();
+  $('.buyButton').mouseleave(function(){
+    $('.callToAction').fadeOut();
   })
 
 
-  $('#buyButton').mouseenter(function(){
-    $('#callToAction').fadeIn();
+  $('.buyButton').mouseenter(function(){
+    $('.callToAction').fadeIn();
   })
 
 })
 
-*/
