@@ -1,4 +1,4 @@
-//Eventos de mouse para 
+//Eventos de mouse para botones de compra
 
 
 $(function(){

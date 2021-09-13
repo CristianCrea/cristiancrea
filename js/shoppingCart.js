@@ -1,10 +1,10 @@
-//Construcción inicial del shoppingCart de compras
+//Construcción inicial del shoppingCart
 
-let shoppingCartID = document.getElementById('cartList') //Llamamos al elemento donde queremos que se imprima el producto al que yo le de click
-let printCart = document.getElementById('artContainers') //Llamamos al div donde queremos que se impriman las cards dinamicamente
-let total = document.getElementById('totalPrice') //Llamamos al elemento donde se va imprimir lo que compremos
-let shoppingList = document.getElementById('cartList')//Llamamos el sitio donde se va imprimir la lista de compras
-let btnCleanCart = document.getElementById("cleanCart")//Creamos el botón
+let shoppingCartID = document.getElementById('cartList') 
+let printCart = document.getElementById('artContainers') 
+let total = document.getElementById('totalPrice') 
+let shoppingList = document.getElementById('cartList')
+let btnCleanCart = document.getElementById("cleanCart")
 
 
 let products = []
@@ -20,25 +20,6 @@ class Producto {
         this.imgUrl = imgUrl
         this.stock= stock
     }
-    getId () {
-        return this.stock
-    }
-
-    getTotal (quantity) {
-        return this.price * quantity
-    }
-
-    getPurchase (quantity) {
-        return {
-            product: this,
-            quantity: quantity,
-            monto: this.getTotal(quantity)
-        }
-    }
-
-    addToCart (quantity) {
-        products.push(this.getPurchase(quantity))
-    }
 }
 
 let elefanteDeManana = new Producto(1, 'Elefante de Mañana', 'Oleo sobre lienzo', 'La fuerza, tranquilidad y la vibración color permearán tu espacio de la mejor forma', 650000, "../images/art-elephant.jpg",  50)
@@ -47,20 +28,15 @@ let tropicalFlamingo = new Producto(3, 'Tropical Flamingo', 'Oleo sobre lienzo',
 let jungleOrange = new Producto(4, 'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.', 800000, "../images/art-orange.jpg", 15)
 
 
-products.push(elefanteDeManana) //Pusheamos todos los productos adentro del array 
+products.push(elefanteDeManana) 
 products.push(galopandoColores)
 products.push(tropicalFlamingo)
 products.push(jungleOrange)
 
-// ---> Creamos elementos en el html dinamicamente, esto con un forEach para recorrerlos  <--- //
+// >>> HTML ELEMENTS <<< // 
 
 products.forEach((e) => {
   
-  // Lo trabajamos con += para que concatene los resultados, 
-  // si lo dejamos sin eso se pisan los resultados y solo saldría el último
-
-  // Para que el botón me agregue las cosas al carrito yo le agrego un evento al botón
-  // esto lo hacemos con onclick="addToShoppingCart(${e.id})" Uso el id para que agregue solo ese y no todos
   printCart.innerHTML +=`
   <div class="artContainer">
         <div class="artContainer_text">
@@ -84,42 +60,35 @@ products.forEach((e) => {
 
 // >>> FUNCTIONS <<< // 
 
-//Ahora creamos la función para añadir los elementos al carrito  al tomar el elemento
-// que toque y lo pushee, para eso creamos otro array para que se alojen ahí (shoppingCart)
 
-const addToShoppingCart = (idOnClick) =>{  //iOnClick se refiere al producto al que yo le dé click
+const addToShoppingCart = (idOnClick) =>{  
 
-  const identifiedObject = products.find (e => e.id == idOnClick) //en mis productos busque el elemento que sea igual == al parametro idOnClick osea al elemento que quiero comprar
+  const identifiedObject = products.find (e => e.id == idOnClick) 
 
-  if(JSON.parse(localStorage.getItem("shoppingCart")) != null){ //No podemos pushear algo null así que debemos hacer este condicional para que solventar el error. (Si todo lo que pasa es distinto != Ejecutame esta función)
+  if(JSON.parse(localStorage.getItem("shoppingCart")) != null){ 
         
-        let shoppingCartNEW = JSON.parse(localStorage.getItem("shoppingCart"))// Traigo lo que tenga el carrito en el localStorage y me lo guarde en shoppingCartNEW
-        shoppingCartNEW.push(identifiedObject) //Luego que haga un push a identifiedObject y este lo agrege a addToShoppingCart
+        let shoppingCartNEW = JSON.parse(localStorage.getItem("shoppingCart"))
+        shoppingCartNEW.push(identifiedObject)
 
         localStorage.setItem("shoppingCart",JSON.stringify(shoppingCartNEW))
-        location.reload()// Cada vez que compramos un producto se recargue la página y no nos duplique la compra
+        location.reload()
 
   } else { 
 
-        shoppingCart.push(identifiedObject) //Cuando no tengo ningun producto me hace esto
-        localStorage.setItem("shoppingCart",JSON.stringify(shoppingCart)) //Cada vez que apretamos un botón lo agregamos al localStorage (setItem) Convertimos el dato a JSON con .stringify
+        shoppingCart.push(identifiedObject) 
+        localStorage.setItem("shoppingCart",JSON.stringify(shoppingCart))
         location.reload()
   }
 
 }
 
-// Ahora hacemos una Función para imprimir lo que yo agrege al carrito.
 
 const printShoppingCart = () =>{
 
-  //Necesitamos que lo yo ponga en el carrito se guarde en el localStorage
-  //Usamos el localStorage para guardarlo y resetear (refrescando) la información los productos que le ingrese sino se duplicaria cada vez que dé click
   
-  let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))  //  Con esto ahora traemos (getItem) lo que esta en el local, como está en JSON, lo convertimos a objeto con JSON.parse
-  // Lo guardamos en una variable para poder recorrerlo en el forEach 
-
-
-  shoppingCartStorage.forEach(e =>  { //Hago un forEach para que por cada producto (iteración) que tenga mi array imprima lo que yo le pida
+  let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))
+ 
+  shoppingCartStorage.forEach(e =>  { 
   
     let shopListContainer = document.createElement('div')
     shopListContainer.setAttribute("class", "shoopingList")
@@ -133,46 +102,42 @@ const printShoppingCart = () =>{
       productPrice.setAttribute("class", "shoopingList_price")
       productPrice.textContent = e.price
 
-      let btnDeleteProduct = document.createElement("button")//Creamos el botón
+      let btnDeleteProduct = document.createElement("button")
       shopListContainer.appendChild(btnDeleteProduct)
-      btnDeleteProduct.setAttribute("class", "deleteProduct") //Le damos la clase que queramos          
+      btnDeleteProduct.setAttribute("class", "deleteProduct") 
       btnDeleteProduct.setAttribute("id", `${e.id}`)
-      btnDeleteProduct.setAttribute("onclick", `deletePurchase(${e.id})`) //Le seteo la función de delete user con un evento "onclick"
-      btnDeleteProduct.textContent = "Quitar" //Le creo el contenido
+      btnDeleteProduct.setAttribute("onclick", `deletePurchase(${e.id})`) 
+      btnDeleteProduct.textContent = "Quitar"
     
     shoppingList.appendChild(shopListContainer)  
 
   })
 
 }
-printShoppingCart() //Ejecuto la función de imprimir si no no funcionaría y no saldría lo que yo ponga en el carrito
 
-//Ahora creamos una Función para totalizar el precio de lo que seleccione
+printShoppingCart() 
+
 
 const totalPrice = () => {
     
-    // Primero debemos saber todos los precios y eso lo hacemos trayendolos del localStorage (getItem)
+  
     let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))
-    let totalPrice = 0; //Inicializamos en cero el precio para comenzar 
+    let totalPrice = 0;
 
-    //Hago un for each que me itere por todos los objetos que estén en el carrito del localStorage
     shoppingCartStorage.forEach(e=> {
-        totalPrice = totalPrice + e.price // totalPrice es igual totalPrice(Que está en cero) + precio del elemento
+        totalPrice = totalPrice + e.price 
     })
-    total.textContent = totalPrice //Imprimirmos lo de la función totalPrice en el total en el elemento creado en html
+    total.textContent = totalPrice 
 }
-totalPrice() //Ejecutamos la función sino no funciona 
+totalPrice() 
 
 
-const deletePurchase = (id) => { //Le pasamos por parameto 
+const deletePurchase = (id) => { 
 
-    //Tomo toda la info que tengo
-    let allProducts = JSON.parse(localStorage.getItem("shoppingCart")) //Primero tomamos todos mis usuarios del local
-    //Me fijo que usuario tiene ese ID 
-    let allProductsUpdated = allProducts.filter(e => e.id != id) //Creo una variable de todos los usuarios actualizados y con un filter todos los usuarios distintos al usuario que recibe por parametro
-    // Tomo toda la info de esos usuarios que no tienen ese id que pase por parametro y lo vuelvo a guardar en el local.
-    localStorage.setItem("shoppingCart", JSON.stringify(allProductsUpdated)) //Setee en el local storage mi 
-    location.reload()//Recargo la página para que me deje la lista sin el usuario que le acabé de borrar
+    let allProducts = JSON.parse(localStorage.getItem("shoppingCart")) 
+    let allProductsUpdated = allProducts.filter(e => e.id != id)
+    localStorage.setItem("shoppingCart", JSON.stringify(allProductsUpdated)) 
+    location.reload()
 
 }
 
