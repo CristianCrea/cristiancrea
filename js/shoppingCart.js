@@ -68,7 +68,7 @@ $.get(url, (reply, state) => {
     
     reply.forEach((e) => {
       $(".apiData").append(`
-            <h6 class="apiData_name">${e.casa.nombre}</h6>
+            <h6 class="apiData_name">Casa: ${e.casa.nombre}</h6>
             <p class="apiData_values">Compra: ${e.casa.compra}</p>
             <p class="apiData_values">Venta: ${e.casa.venta}</p>
             <p class="apiData_values">Variacion: ${e.casa.variacion}</p>
