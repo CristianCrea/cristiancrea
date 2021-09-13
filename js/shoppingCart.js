@@ -58,6 +58,26 @@ products.forEach((e) => {
   `
 })
 
+// >>> API <<< // 
+
+const url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+
+$.get(url, (reply, state) => {
+  
+  if (state === "success") {
+    
+    reply.forEach((e) => {
+      $(".apiContainer").append(`
+            <h1>${e.casa.nombre}</h1>
+            <p>${e.casa.compra}</p>
+            <p>${e.casa.venta}</p>
+            <p>${e.casa.variacion}</p>
+          `);
+    });
+    console.log(reply);
+  }
+});
+
 // >>> FUNCTIONS <<< // 
 
 
@@ -87,7 +107,7 @@ const printShoppingCart = () =>{
 
   
   let shoppingCartStorage = JSON.parse(localStorage.getItem("shoppingCart"))
- 
+
   shoppingCartStorage.forEach(e =>  { 
   
     let shopListContainer = document.createElement('div')
@@ -116,7 +136,6 @@ const printShoppingCart = () =>{
 }
 
 printShoppingCart() 
-
 
 const totalPrice = () => {
     
@@ -149,23 +168,4 @@ btnCleanCart.addEventListener("click", () =>{
   location.reload()
 })
 
-// >>> API <<< // 
-
-const url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
-
-$.get(url, (reply, state) => {
-  
-  if (state === "success") {
-    
-    reply.forEach((e) => {
-      $(".apiContainer").append(`
-            <h1>${e.casa.nombre}</h1>
-            <p>${e.casa.compra}</p>
-            <p>${e.casa.venta}</p>
-            <p>${e.casa.variacion}</p>
-          `);
-    });
-    console.log(reply);
-  }
-});
 
