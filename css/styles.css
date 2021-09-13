@@ -383,6 +383,9 @@ main {
       font-size: 2rem;
       color: var(--grey-light);
       margin: 1rem 0; }
+    .apiContainer .apiData .apiData_values {
+      font-size: 1.5rem;
+      margin: 0.5rem 0 0.5rem 1rem; }
 
 /*MEDIA QUERIES DIDACUS ART TABLET*/
 @media screen and (max-width: 768px) {
