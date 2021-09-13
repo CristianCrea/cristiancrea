@@ -374,7 +374,8 @@ main {
     color: var(--purple-rocks);
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    width: 50%; }
   .apiContainer .apiData {
     margin-bottom: 2rem; }
     .apiContainer .apiData .apiData_name {
