@@ -362,6 +362,28 @@ main {
     font-size: 2.5rem;
     font-family: var(--font-Archivo); }
 
+/* STYLE FOR API*/
+.apiContainer {
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center; }
+  .apiContainer .apiContainer__title {
+    color: var(--purple-rocks);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem; }
+  .apiContainer .apiData {
+    margin-bottom: 2rem; }
+    .apiContainer .apiData .apiData_name {
+      background-color: var(--yellow-high);
+      padding: 1rem;
+      font-size: 2rem;
+      color: var(--grey-light);
+      margin: 1rem 0; }
+
 /*MEDIA QUERIES DIDACUS ART TABLET*/
 @media screen and (max-width: 768px) {
   .artContainer {

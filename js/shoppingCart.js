@@ -67,11 +67,11 @@ $.get(url, (reply, state) => {
   if (state === "success") {
     
     reply.forEach((e) => {
-      $(".apiContainer").append(`
-            <h1>${e.casa.nombre}</h1>
-            <p>${e.casa.compra}</p>
-            <p>${e.casa.venta}</p>
-            <p>${e.casa.variacion}</p>
+      $(".apiData").append(`
+            <h6 class="apiData_name">${e.casa.nombre}</h6>
+            <p class="apiData_values">Compra: ${e.casa.compra}</p>
+            <p class="apiData_values">Venta: ${e.casa.venta}</p>
+            <p class="apiData_values">Variacion: ${e.casa.variacion}</p>
           `);
     });
     console.log(reply);
