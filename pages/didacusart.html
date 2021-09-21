@@ -27,17 +27,18 @@
         <label for="btn-menu"><img src="../images/mobile-menu.svg" alt="Icono de menú hamburguesa, presiona para conocer más secciones."></label>
         <nav class="topSection__menu">
             <ul>
-                  <li><a href="../index.html">About me</a></li>
-                  <li><a href="../pages/works.html">Feed works</a></li>
-                  <li><a href="../pages/didacusart.html">Didacus Shop</a></li>
+                  <li><a  class="dmTextHeader" href="../index.html">About me</a></li>
+                  <li><a  class="dmTextHeader" href="../pages/works.html">Feed works</a></li>
+                  <li><a  class="dmTextHeader" href="../pages/didacusart.html">Didacus Shop</a></li>
+                  <button id="changeTheme">Dark Mode</button>
             </ul>
         </nav>
       </div>
     </header>
     <main> 
       <div class="worksMain__title">
-        <a href="../index.html">VOLVER AL HOME</a>
-        <h1 id="SectionTitle" >DIDACUS<br>ART</h1>
+        
+        <h1 id="SectionTitle" >DIDACUS ART</h1>
       </div>
       <!-- ART CARDS -->
 
@@ -51,7 +52,6 @@
           <button id="cleanCart" >Vaciar carrito</button>
         </div>
         <div id="cartList"></div>
-        
       </div>
 
       <div class="cartContainer_total">
@@ -61,7 +61,7 @@
 
       <!-- API CONTAINER -->
       <div class="apiContainer">
-        <h6 class="apiContainer__title">¿Quieres conocer el precio del dolar para gestionar tu compra?</h6>
+        <h6 class="apiContainer__title dm__apiContainer--title">¿Quieres conocer el precio del dolar para gestionar tu compra?</h6>
         <div class="apiData"></div>
       </div>
       
@@ -75,8 +75,8 @@
         crossorigin="anonymous">
     </script> 
     <script src="../js/shoppingCart.js"></script>
-    <script src="../js/eventosJquery.js"></script>
-    <script src="apiConsume.js" ></script>
+    <!-- <script src="../js/eventosJquery.js"></script> -->
+    <script src="../js/darkMode.js"></script>
   </body>
 </html>
 

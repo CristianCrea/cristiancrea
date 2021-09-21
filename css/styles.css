@@ -320,13 +320,15 @@ main {
 /* Styles shopping list*/
 .shoopingList {
   display: flex;
-  width: 40rem;
-  justify-content: space-around;
+  width: 45rem;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem; }
   .shoopingList .shoopingList_price {
     font-weight: bold;
     color: var(--grey-light); }
+  .shoopingList .shoopingList__productPhoto {
+    width: 8rem; }
 
 .deleteProduct {
   background-color: var(--beige-light);
