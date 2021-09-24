@@ -87,6 +87,7 @@ products.forEach((e) => {
   `
 })
 
+
 // >>> API <<< // 
 
 const url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
@@ -185,6 +186,7 @@ const totalPrice = () => {
 totalPrice() 
 
 
+
 const deletePurchase = (id) => { 
 
   let allProducts = JSON.parse(localStorage.getItem('shoppingCart'))
@@ -196,12 +198,14 @@ const deletePurchase = (id) => {
     location.reload()
   }
 
+
     // let allProducts = JSON.parse(localStorage.getItem("shoppingCart")) 
     // let allProductsUpdated = allProducts.filter(e => e.id != id)
     // localStorage.setItem("shoppingCart", JSON.stringify(allProductsUpdated)) 
     // location.reload()
 
 }
+
 
 // >>> EVENTS <<< // 
 
@@ -212,3 +216,8 @@ btnCleanCart.addEventListener("click", () =>{
 })
 
 
+// >>> IF DARK MODE <<< // 
+
+  if (localStorage.getItem('theme') == 'darkMode') {
+  darkTheme()
+  } 

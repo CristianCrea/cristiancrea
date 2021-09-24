@@ -4,7 +4,7 @@ $('#changeTheme').on('click', () =>{
   
   originalTheme()
 
-  }else{
+  }else {
     darkTheme()
   }
   
@@ -43,5 +43,7 @@ const  originalTheme = () => {
   localStorage.setItem('theme', 'lightMode')
 
 }
+
+
 
 
