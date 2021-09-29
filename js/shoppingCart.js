@@ -211,7 +211,7 @@ const deletePurchase = (id) => {
 
 
 btnCleanCart.addEventListener("click", () =>{
-  localStorage.clear(),
+  localStorage.removeItem('shoppingCart'),
   location.reload()
 })
 
