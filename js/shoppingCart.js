@@ -98,10 +98,13 @@ $.get(url, (reply, state) => {
     
     reply.forEach((e) => {
       $(".apiData").append(`
+
+            <div class="api__HouseCard dm__HouseCard">
             <h6 class="apiData_name">Casa - ${e.casa.nombre}</h6>
             <p class="apiData_values dm__apiData_values">Compra: ${e.casa.compra}</p>
             <p class="apiData_values dm__apiData_values">Venta: ${e.casa.venta}</p>
             <p class="apiData_values dm__apiData_values">Variacion: ${e.casa.variacion}</p>
+            </div>
           `);
     });
     console.log(reply);

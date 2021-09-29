@@ -22,8 +22,7 @@ const darkTheme = () => {
   $('.dmPrice__Container').css('background-color', '#0D0A2A')
   $('.dmPrice').css('color', '#f2eadf')
   $('.dm__shoopingList').css('color', '#f2eadf')
-  $('.dm__apiContainer--title').css('color', '#f2eadf')
-  $('.dm__apiData_values').css('color', '#f2eadf')
+  $('.dm__apiData_values').css('color', '#4d4d4d')
   
   localStorage.setItem('theme', 'darkMode')
 
@@ -37,7 +36,6 @@ const  originalTheme = () => {
   $('.dmPrice__Container').css('background-color', '#f2eadf')
   $('.dmPrice').css('color', '#4d4d4d')
   $('.dm__shoopingList').css('color', '#4d4d4d')
-  $('.dm__apiContainer--title').css('color', '#4a00e0')
   $('.dm__apiData_values').css('color', '#4d4d4d')
   
   localStorage.setItem('theme', 'lightMode')
