@@ -11,14 +11,15 @@ let products = []
 let shoppingCart = []
 
 class Producto {
-    constructor(id, title, material, description, price, imgUrl, stock) {
+    constructor(id, title, material, description, price, imgUrl, imgUrl2, imgUrl3,) {
         this.id = id
         this.title = title
         this.material = material
         this.description = description
         this.price = price
         this.imgUrl = imgUrl
-        this.stock= stock
+        this.imgUrl2 = imgUrl2
+        this.imgUrl3 = imgUrl3
     }
 }
 
@@ -29,6 +30,8 @@ let elefanteDeManana = new Producto(
   'La fuerza, tranquilidad y la vibración color permearán tu espacio de la mejor forma',
   190, 
   "../images/art-elephant.jpg",
+  "../images/art-elephant-2.jpg",
+  "../images/art-elephant-3.jpg",
   50
 )
 
@@ -39,6 +42,8 @@ let galopandoColores = new Producto(
   'Si galopas conmigo, encontrarás paz, tranquilidad y shot de energia y vitalidad que transmite mi ser.',
   210,
   "../images/art-horse.jpg",
+  "../images/art-horse-2.jpg",
+  "../images/art-horse-3.jpg",
   10
 )
 
@@ -47,6 +52,8 @@ let tropicalFlamingo = new Producto(
   'Tropical Flamingo', 'Oleo sobre lienzo', 'La tranquilidad y el garbo plasmados en un solo lugar. Déjate conquistar por la elegancia de esta pieza.',
   230,
   "../images/art-flamenco.jpg",
+  "../images/art-flamenco-2.jpg",
+  "../images/art-flamenco-3.jpg",
   30
   )
 
@@ -55,6 +62,8 @@ let jungleOrange = new Producto(
   'Jungle Orange', 'Oleo sobre lienzo', 'Toronjea de color tu vida con esta pieza llena de tropicalidad y naturaleza.',
   250, 
   "../images/art-orange.jpg",
+  "../images/art-orange-2.jpg",
+  "../images/art-orange-3.jpg",
   15)
 
 
@@ -90,14 +99,11 @@ products.forEach((e) => {
                     <img src=${e.imgUrl} class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src=${e.imgUrl} class="d-block w-100" alt="...">
+                    <img src=${e.imgUrl2} class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src=${e.imgUrl} class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src=${e.imgUrl} class="d-block w-100" alt="...">
-                  </div>
+                    <img src=${e.imgUrl3} class="d-block w-100" alt="...">
+                  </div>      
               </div>
 
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -112,7 +118,8 @@ products.forEach((e) => {
             </div>
 
         </div>
-  </div>
+
+    </div>
   `
 })
 
