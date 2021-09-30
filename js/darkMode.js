@@ -14,7 +14,7 @@ const darkTheme = () => {
   
   
   $('body').css('background-color', '#0D0A2A')
-  $('.dmTextHeader').css('color', '#f2eadf')
+  $('.dmTextHeader').css('color', '#4a00e0')
   $('.artContainer_text-dmTitle').css({
     'background-color': '#fcff5c',
   })
