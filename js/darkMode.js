@@ -1,23 +1,17 @@
 $('#changeTheme').on('click', () =>{
 
   if (localStorage.getItem('theme') == 'darkMode'){
-  
-  originalTheme()
-
+    originalTheme()
   }else {
     darkTheme()
   }
-  
 })
 
 const darkTheme = () => {
   
-  
   $('body').css('background-color', '#0D0A2A')
   $('.dmTextHeader').css('color', '#4a00e0')
-  $('.artContainer_text-dmTitle').css({
-    'background-color': '#fcff5c',
-  })
+  $('.artContainer_text-dmTitle').css({'background-color': '#fcff5c',})
   $('.artContainer_text-dmBio').css('color', '#f2eadf')
   $('.dmPrice__Container').css('background-color', '#0D0A2A')
   $('.dmPrice').css('color', '#f2eadf')
@@ -25,7 +19,6 @@ const darkTheme = () => {
   $('.dm__apiData_values').css('color', '#4d4d4d')
   
   localStorage.setItem('theme', 'darkMode')
-
 }
 
 const  originalTheme = () => {
@@ -39,7 +32,6 @@ const  originalTheme = () => {
   $('.dm__apiData_values').css('color', '#4d4d4d')
   
   localStorage.setItem('theme', 'lightMode')
-
 }
 
 

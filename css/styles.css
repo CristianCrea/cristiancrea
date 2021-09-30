@@ -215,7 +215,8 @@ main {
   align-items: center;
   justify-content: center;
   align-self: center;
-  box-shadow: 0px 10px 13px -7px #717171, 5px 7px 36px 2px rgba(165, 165, 165, 0); }
+  box-shadow: 0px 10px 13px -7px #717171, 5px 7px 36px 2px rgba(165, 165, 165, 0);
+  margin-bottom: 1rem; }
   #changeTheme span {
     display: inline-block;
     width: 2rem;
@@ -389,6 +390,22 @@ main {
     color: var(--beige-light);
     font-size: 2.5rem;
     font-family: var(--font-Archivo); }
+  .cartContainer_total a {
+    background-color: var(--yellow-high);
+    border: none;
+    width: 30rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    font-family: var(--font-Archivo);
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+    color: var(--grey-light);
+    text-align: center;
+    cursor: pointer; }
+  .cartContainer_total a:hover {
+    background-color: var(--beige-light);
+    color: var(--grey-light);
+    border: 1px solid var(--grey-light); }
 
 /* STYLE FOR API*/
 .dollar__container {
@@ -1404,7 +1421,8 @@ footer p {
     background-color: var(--yellow-high);
     width: 80%;
     margin-left: -85%;
-    transition: all 0.5s; }
+    transition: all 0.5s;
+    z-index: 1; }
     .topSection__menu ul {
       flex-direction: column; }
     .topSection__menu ul li:nth-child(2) {
