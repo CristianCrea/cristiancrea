@@ -11,7 +11,7 @@ let products = []
 let shoppingCart = []
 
 class Producto {
-    constructor(id, title, material, description, price, imgUrl, imgUrl2, imgUrl3,) {
+    constructor(id, title, material, description, price, imgUrl, imgUrl2, imgUrl3, altImg) {
         this.id = id
         this.title = title
         this.material = material
@@ -20,6 +20,7 @@ class Producto {
         this.imgUrl = imgUrl
         this.imgUrl2 = imgUrl2
         this.imgUrl3 = imgUrl3
+        this.altImg = altImg
     }
 }
 
@@ -32,7 +33,8 @@ let elefanteDeManana = new Producto(
   "../images/art-elephant.jpg",
   "../images/art-elephant-2.jpg",
   "../images/art-elephant-3.jpg",
-  50
+  "../images/art-orange-4.jpg",
+  "Cuadro de elefante morado con haz de luz en los valles de áfrica en oleo sobre lienzo",
 )
 
 let galopandoColores = new Producto(
@@ -44,7 +46,7 @@ let galopandoColores = new Producto(
   "../images/art-horse.jpg",
   "../images/art-horse-2.jpg",
   "../images/art-horse-3.jpg",
-  10
+  "Cuadro de caballo tecnicolor con mirada galopante en oleo sobre lienzo",
 )
 
 let tropicalFlamingo = new Producto(
@@ -54,7 +56,7 @@ let tropicalFlamingo = new Producto(
   "../images/art-flamenco.jpg",
   "../images/art-flamenco-2.jpg",
   "../images/art-flamenco-3.jpg",
-  30
+  "Cuadro de imponente flamingo rosado con plantas verdes en su espalda en oleo sobre lienzo",
   )
 
 let jungleOrange = new Producto(
@@ -64,7 +66,8 @@ let jungleOrange = new Producto(
   "../images/art-orange.jpg",
   "../images/art-orange-2.jpg",
   "../images/art-orange-3.jpg",
-  15)
+  "Cuadro de toronjas azules selváticas en oleo sobre lienzo",
+  )
 
 
 products.push(elefanteDeManana) 
@@ -96,13 +99,13 @@ products.forEach((e) => {
             
               <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src=${e.imgUrl} class="d-block w-100" alt="...">
+                    <img src=${e.imgUrl} class="d-block w-100" alt=${e.altImg}>
                   </div>
                   <div class="carousel-item">
-                    <img src=${e.imgUrl2} class="d-block w-100" alt="...">
+                    <img src=${e.imgUrl2} class="d-block w-100" alt=${e.altImg}>
                   </div>
                   <div class="carousel-item">
-                    <img src=${e.imgUrl3} class="d-block w-100" alt="...">
+                    <img src=${e.imgUrl3} class="d-block w-100" alt=${e.altImg}>
                   </div>      
               </div>
 
